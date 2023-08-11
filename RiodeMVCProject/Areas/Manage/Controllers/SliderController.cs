@@ -1,13 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RiodeMVCProject.Services.Interfaces;
 
 namespace RiodeMVCProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
     public class SliderController : Controller
     {
-        public IActionResult Index()
+        readonly ISliderService _sliderservice;
+
+        public SliderController(ISliderService sliderservice)
         {
-            return View();
+            _sliderservice = sliderservice;
+        }
+
+        public async Task<IActionResult>Index()
+        {
+            return View(await _sliderservice.GetAll());
         }
     }
 }

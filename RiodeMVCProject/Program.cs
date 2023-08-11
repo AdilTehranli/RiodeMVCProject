@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.DataAccess;
+using RiodeMVCProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddService();
 // Add services to the container.
 builder.Services.AddDbContext<RiodeDbContext>(opt =>
 {
