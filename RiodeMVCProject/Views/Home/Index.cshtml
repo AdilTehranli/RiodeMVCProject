@@ -14,53 +14,29 @@
                                     'items': 1,
                                     'autoplay': false
                                 }">
-                                   @foreach (var slider in Model.Sliders)
+                                @foreach (var item in Model.Sliders)
                             {
-                                
-                                    <div class="banner banner-fixed intro-slide1 content-center content-middle"
-                                         style="background-color: #444342;">
+                                    <div class="intro-slide2 banner banner-fixed">
                                         <figure>
-                                            <img src="~/images/demos/demo2/@slider.SliderImage" alt="intro-banner" width="1180"
-                                                 height="600" style="background-color: #444342;" />
-                                        </figure>
-                                        <div class="banner-content">
-                                            <h4 class="banner-subtitle font-weight-semi-bold text-white ls-normal lh-1 mb-0 text-uppercase text-left slide-animate"
-                                                data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1.2s', 'delay': '.3s'}">
-                                                Men’s wear
-                                            </h4>
-                                            <h2 class="banner-title text-uppercase text-white slide-animate"
-                                                data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1.2s', 'delay': '.3s'}">
-                                                Collection
-                                            </h2>
-                                            <h5 class="font-weight-normal text-white lh-1 ls-normal text-right mb-1 slide-animate"
-                                                data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '1s'}">
-                                                Start at <span class="text-secondary font-weight-bold">$19.99</span>
-                                            </h5>
-                                        </div>
-                                    </div>
-                            }
-
-                                    @*<div class="intro-slide2 banner banner-fixed">
-                                        <figure>
-                                            <img src="~/images/demos/demo2/slides/2.jpg" alt="banner" width="1180"
+                                            <img src="~/images/demos/demo2/@item.SliderImage" alt="banner" width="1180"
                                                  height="600" style="background-color: #686868" />
                                         </figure>
                                         <div class="banner-content y-50">
                                             <h4 class="banner-subtitle font-weight-normal lh-1 ls-m slide-animate"
                                                 data-animation-options="{'name': 'fadeInDownShorter', 'duration': '1.2s', 'delay': '.5s'}">
-                                                Lifestyle collection
+                                                @item.SubTitle
                                             </h4>
                                             <h3 class="banner-title ls-l text-white text-uppercase font-weight-bold lh-1 slide-animate"
                                                 data-animation-options="{'name': 'blurIn', 'duration': '1.4s', 'delay': '.1s'}">
-                                                For Women’s
+                                                @item.Title
                                             </h3>
                                             <h5 class="font-weight-normal text-white text-uppercase lh-1 ls-m mb-1 slide-animate"
                                                 data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.7s'}">
-                                                sale Up to <span class="text-secondary font-weight-bold">30% Off</span>
+                                                sale Up to <span class="text-secondary font-weight-bold">@item.DisCount</span>
                                             </h5>
                                             <p class="font-weight-normal ls-s mb-7 slide-animate"
                                                data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.9s'}">
-                                                Get Free Shipping on all orders over $99.00
+                                                @item.Description
                                             </p>
                                             <a href="demo2-shop.html" class="btn btn-white btn-rounded slide-animate"
                                                data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1.1s'}">
@@ -68,7 +44,8 @@
                                                 now
                                             </a>
                                         </div>
-                                    </div>*@
+                                    </div>
+                            }
                                 </div>
                             </div>
                             @foreach (var item in Model.Banners)
