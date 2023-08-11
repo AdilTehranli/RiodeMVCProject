@@ -1,0 +1,10 @@
+﻿using RiodeMVCProject.Models;
+
+namespace RiodeMVCProject.ViewModels.HomeVMs
+{
+    public class HomeVM
+    {
+        public ICollection<Slider> Sliders { get; set; }
+        public ICollection<Banner> Banners { get; set; }
+    }
+}

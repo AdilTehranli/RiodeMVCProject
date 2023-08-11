@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using RiodeMVCProject.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<RiodeDbContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration["ConnectionStrings:MSSQL"]);
+});
 builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

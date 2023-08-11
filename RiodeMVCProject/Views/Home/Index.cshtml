@@ -1,4 +1,5 @@
 ﻿       <!-- start main -->
+       @model HomeVM
         <main class="main demo2-cls">
             <div class="page-content">
                 <div class="container">
@@ -13,10 +14,13 @@
                                     'items': 1,
                                     'autoplay': false
                                 }">
+                                   @foreach (var slider in Model.Sliders)
+                            {
+                                
                                     <div class="banner banner-fixed intro-slide1 content-center content-middle"
                                          style="background-color: #444342;">
                                         <figure>
-                                            <img src="~/images/demos/demo2/slides/1.jpg" alt="intro-banner" width="1180"
+                                            <img src="~/images/demos/demo2/@slider.SliderImage" alt="intro-banner" width="1180"
                                                  height="600" style="background-color: #444342;" />
                                         </figure>
                                         <div class="banner-content">
@@ -34,8 +38,9 @@
                                             </h5>
                                         </div>
                                     </div>
+                            }
 
-                                    <div class="intro-slide2 banner banner-fixed">
+                                    @*<div class="intro-slide2 banner banner-fixed">
                                         <figure>
                                             <img src="~/images/demos/demo2/slides/2.jpg" alt="banner" width="1180"
                                                  height="600" style="background-color: #686868" />
@@ -63,10 +68,12 @@
                                                 now
                                             </a>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
-
+                            @foreach (var item in Model.Banners)
+                    {
+                        
                             <div class="col-md-6 mb-4">
                                 <div class="banner banner-fixed intro-banner intro-banner1 content-middle appear-animate"
                                      data-animation-options="{
@@ -74,15 +81,15 @@
                                     'delay': '.3s'
                                 }">
                                     <figure>
-                                        <img src="~/images/demos/demo2/banners/1.jpg" width="580" height="249"
+                                        <img src="~/images/demos/demo2/@item.BannerImage" width="580" height="249"
                                              alt="banner" style="background-color: #eca5a9;" />
                                     </figure>
                                     <div class="banner-content">
                                         <h4 class="banner-subtitle ls-normal text-white text-uppercase font-weight-normal lh-1">
-                                            New Arrivals
+                                            @item.Subtitle
                                         </h4>
                                         <h3 class="banner-title text-white font-weight-bold ls-md">
-                                            Women's Sale
+                                            @item.Title
                                         </h3>
                                         <a href="demo2-shop.html"
                                            class="btn btn-white btn-link btn-underline font-weight-semi-bold">
@@ -92,32 +99,8 @@
                                     </div>
                                 </div>
                             </div>
+                    }
 
-                            <div class="col-md-6 mb-4">
-                                <div class="banner banner-fixed intro-banner intro-banner2 content-middle appear-animate"
-                                     data-animation-options="{
-                                    'name': 'fadeInUpShorter',
-                                    'delay': '.5s'
-                                }">
-                                    <figure>
-                                        <img src="~/images/demos/demo2/banners/2.jpg" width="580" height="249"
-                                             alt="banner" style="background-color: #494442;" />
-                                    </figure>
-                                    <div class="banner-content">
-                                        <h4 class="banner-subtitle ls-normal text-white text-uppercase font-weight-normal lh-1">
-                                            Trending
-                                        </h4>
-                                        <h3 class="banner-title text-white font-weight-bold ls-md">
-                                            New Sneaker
-                                        </h3>
-                                        <a href="demo2-shop.html"
-                                           class="btn btn-white btn-link btn-underline btn-white font-weight-semi-bold">
-                                            Shop
-                                            Now<i class="d-icon-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </section>
 
