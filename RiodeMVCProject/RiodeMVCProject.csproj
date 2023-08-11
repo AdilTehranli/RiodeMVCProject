@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Manage\Controllers\" />
     <Folder Include="Areas\Manage\Data\" />
     <Folder Include="Areas\Manage\Models\" />
-    <Folder Include="Areas\Manage\Views\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Services\Implements\" />
     <Folder Include="wwwroot\images\demos\demo33\blog\" />
   </ItemGroup>
 
