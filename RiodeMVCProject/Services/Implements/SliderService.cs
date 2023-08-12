@@ -29,9 +29,9 @@ namespace RiodeMVCProject.Services.Implements
            return await _context.Sliders.ToListAsync();
         }
 
-        public Task<Slider> GetById(int? id)
+        public async Task<Slider> GetById(int? id)
         {
-            throw new NotImplementedException();
+            return await _context.Sliders.FindAsync(id);
         }
 
         public Task Update(string name)

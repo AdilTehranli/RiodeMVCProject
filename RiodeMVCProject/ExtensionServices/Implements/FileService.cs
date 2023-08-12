@@ -34,7 +34,7 @@ public FileService(IWebHostEnvironment env)
         }
     }
 
-    public async Task<string> UploadAsync(IFormFile file, string path, string contentType = "image", int mb = 2)
+    public async Task<string> UploadAsync(IFormFile file, string path, string contentType = "images", int mb = 2)
     {
         if (!file.IsSizeValid(mb)) throw new Exception();
         if (!file.IsTypeValid(contentType)) throw new Exception();

@@ -8,6 +8,8 @@ namespace RiodeMVCProject.Services
         public static void AddService(this IServiceCollection services)
         {
             services.AddScoped<ISliderService,SliderService> ();
+            services.AddScoped<IBannerService,BannerService> ();
+            services.AddScoped<IProductService,ProductService> ();
         }
     }
 }

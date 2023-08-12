@@ -11,5 +11,6 @@ namespace RiodeMVCProject.DataAccess
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
