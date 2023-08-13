@@ -1,8 +1,9 @@
 ﻿using RiodeMVCProject.Extensions;
+using RiodeMVCProject.ExtensionServices.Interfaces;
 
 namespace RiodeMVCProject.ExtensionServices.Implements;
 
-public class FileService
+public class FileService:IFileService
 {
     readonly IWebHostEnvironment _env;
 public FileService(IWebHostEnvironment env)

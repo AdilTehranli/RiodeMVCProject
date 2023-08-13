@@ -11,9 +11,9 @@ builder.Services.AddDbContext<RiodeDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration["ConnectionStrings:MSSQL"]);
 });
 builder.Services.AddControllersWithViews();
-var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

@@ -1,4 +1,6 @@
-﻿using RiodeMVCProject.Services.Implements;
+﻿using RiodeMVCProject.ExtensionServices.Implements;
+using RiodeMVCProject.ExtensionServices.Interfaces;
+using RiodeMVCProject.Services.Implements;
 using RiodeMVCProject.Services.Interfaces;
 
 namespace RiodeMVCProject.Services
@@ -10,6 +12,7 @@ namespace RiodeMVCProject.Services
             services.AddScoped<ISliderService,SliderService> ();
             services.AddScoped<IBannerService,BannerService> ();
             services.AddScoped<IProductService,ProductService> ();
+            services.AddScoped<IFileService, FileService> ();
         }
     }
 }
