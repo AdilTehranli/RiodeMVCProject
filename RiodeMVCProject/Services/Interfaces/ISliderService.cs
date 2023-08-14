@@ -7,7 +7,7 @@ public interface ISliderService
 {
 
     Task Create(CreateSliderVM createSlider);
-    Task Update(string name);
+    Task Update(UpdateSliderVM updateSlider);
     Task Delete(int? id);
     Task<ICollection<Slider>> GetAll();
     Task<Slider> GetById(int? id);

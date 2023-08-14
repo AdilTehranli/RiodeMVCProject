@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+    @await RenderSectionAsync("styles", false)
 </head>
 
 <body id="page-top">
@@ -347,7 +348,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Admin/js/sb-admin-2.min.js"></script>
-
+    @await RenderSectionAsync("scripts", false)
 </body>
 
 </html>

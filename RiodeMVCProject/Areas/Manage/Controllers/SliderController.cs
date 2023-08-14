@@ -54,5 +54,46 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                 return NotFound();
             }
         }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            try
+            {
+                await _sliderservice.Delete(id);
+                TempData["IsDeleted"] = true;
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<IActionResult>  Update(int? id)
+        {
+            try
+            {
+
+            return View(await _sliderservice.GetById(id));
+            }
+            catch (Exception)
+            {
+
+                return NotFound();
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(int? id,UpdateSliderVM sliderVM)
+        {
+            try
+            {
+                await _sliderservice.Update(sliderVM);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                throw new Exception();
+            }
+        }
     }
 }

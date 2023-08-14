@@ -33,9 +33,11 @@ namespace RiodeMVCProject.Services.Implements
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int? id)
+        public async Task Delete(int? id)
         {
-            throw new NotImplementedException();
+            var entity=await GetById(id);
+            _context.Sliders.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ICollection<Slider>> GetAll()
@@ -45,12 +47,20 @@ namespace RiodeMVCProject.Services.Implements
 
         public async Task<Slider> GetById(int? id)
         {
-            return await _context.Sliders.FindAsync(id);
+            if (id < 1 || id == null) throw new ArgumentException();
+            var entity = await _context.Sliders.FindAsync(id);
+            if (entity == null) throw new ArgumentNullException();
+            return entity;
         }
 
-        public Task Update(string name)
+        public async Task Update(UpdateSliderVM updateSlider)
         {
-            throw new NotImplementedException();
+            var entity = await GetById(updateSlider.Id);
+            entity.SubTitle = updateSlider.SubTitle;
+            entity.Title = updateSlider.Title;
+            entity.Description = updateSlider.Description;
+            entity.DisCount = updateSlider.DisCount;
+            await _context.SaveChangesAsync();
         }
     }
 }
