@@ -16,8 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\User\c#-ASP.NET\RiodeMVCProject\RiodeMVCProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/c\#-ASP.NET/RiodeMVCProject/RiodeMVCProject/Areas/Manage/Views/Banner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/c\#-ASP.NET/RiodeMVCProject/RiodeMVCProject/Areas/Manage/Views/Banner/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/c\#-ASP.NET/RiodeMVCProject/RiodeMVCProject/Areas/Manage/Views/Banner/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/c\#-ASP.NET/RiodeMVCProject/RiodeMVCProject/Areas/Manage/Views/Product/Index.cshtml]

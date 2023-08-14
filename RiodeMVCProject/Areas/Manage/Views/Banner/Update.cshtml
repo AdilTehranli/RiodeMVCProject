@@ -1,0 +1,26 @@
+﻿@using RiodeMVCProject.Models;
+
+@{
+    ViewData["Title"] = "Update";
+}
+@model Banner
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Title</label>
+        <input class="form-control" asp-for="Title">
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="mb-3">
+        <label>Subtitle</label>
+        <input class="form-control" asp-for="Subtitle">
+        <span class="text-danger" asp-validation-for="Subtitle"></span>
+    </div>
+    <div class="mb-3">
+        <label>BannerImage</label>
+        <input class="form-control" asp-for="BannerImage">
+        <span class="text-danger" asp-validation-for="BannerImage"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

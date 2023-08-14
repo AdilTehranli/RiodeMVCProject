@@ -1,42 +1,63 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.DataAccess;
+using RiodeMVCProject.ExtensionServices.Interfaces;
 using RiodeMVCProject.Models;
 using RiodeMVCProject.Services.Interfaces;
+using RiodeMVCProject.ViewModels.BannerVMs;
+using RiodeMVCProject.ViewModels.SliderVMs;
 
 namespace RiodeMVCProject.Services.Implements
 {
     public class BannerService : IBannerService
     {
         readonly RiodeDbContext _context;
+        readonly IFileService _fileService;
 
-        public BannerService(RiodeDbContext context)
+        public BannerService(RiodeDbContext context, IFileService fileService)
         {
             _context = context;
+            _fileService = fileService;
         }
 
-        public Task Create(string name)
+        public async Task Create(CreateBannerVM bannerVM)
         {
-            throw new NotImplementedException();
+            Banner bm = new Banner()
+            {
+                BannerImage = await _fileService.UploadAsync(bannerVM.BannerImage,Path.Combine("images","img")),
+                Subtitle= bannerVM.Subtitle, 
+                Title= bannerVM.Title,
+                
+            };
+            await _context.AddAsync(bm);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int? id)
+        public async Task Delete(int? id)
         {
-            throw new NotImplementedException();
+            var entity = await GetById(id);
+            _context.Banners.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ICollection<Banner>> GetAll()
         {
             return await _context.Banners.ToListAsync(); 
+        } 
+
+        public async Task<Banner> GetById(int? id)
+        {
+            if (id < 1 || id == null) throw new ArgumentException();
+            var entity = await _context.Banners.FindAsync(id);
+            if (entity == null) throw new ArgumentNullException();
+            return entity;
         }
 
-        public Task<Banner> GetById(int? id)
+        public async Task Update(UpdateBannerVM bannerVM)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Update(string name)
-        {
-            throw new NotImplementedException();
+            var entity = await GetById(bannerVM.Id);
+            entity.Subtitle = bannerVM.Subtitle;    
+            entity.Title = bannerVM.Title;
+            await _context.SaveChangesAsync();
         }
     }
 }
