@@ -32,9 +32,11 @@ namespace RiodeMVCProject.Services.Implements
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int? id)
+        public async Task Delete(int? id)
         {
-            throw new NotImplementedException();
+            var entity = await GetById(id);
+            _context.Products.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ICollection<Product>> GetAll()
@@ -50,9 +52,15 @@ namespace RiodeMVCProject.Services.Implements
             return entity;
         }
 
-        public Task Update(UpdateProductVM Productvm)
+        public async Task Update(UpdateProductVM Productvm)
         {
-            throw new NotImplementedException();
+            var entity = await GetById(Productvm.Id);
+            entity.Category = Productvm.Category;
+            entity.Price = Productvm.Price; 
+            entity.Name = Productvm.Name;
+            entity.Price=Productvm.Price;
+            entity.Raiting = Productvm.Raiting;
+            await _context.SaveChangesAsync();   
         }
     }
 }

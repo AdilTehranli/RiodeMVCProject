@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RiodeMVCProject.Extensions;
+using RiodeMVCProject.Models;
 using RiodeMVCProject.Services.Implements;
 using RiodeMVCProject.Services.Interfaces;
 using RiodeMVCProject.ViewModels.BannerVMs;
@@ -28,6 +30,14 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
         {
             try
             {
+                if (createBanner.BannerImage != null)
+                {
+                    if (!createBanner.BannerImage.IsTypeValid("image"))
+                        ModelState.AddModelError("ImageFile", "Wrong file type");
+                    if (!createBanner.BannerImage.IsSizeValid(2))
+                        ModelState.AddModelError("ImageFile", "File max size is 2mb");
+                }
+                if (!ModelState.IsValid) return View();
                 await _bannerservice.Create(createBanner);
                 return RedirectToAction(nameof(Index));
             }
