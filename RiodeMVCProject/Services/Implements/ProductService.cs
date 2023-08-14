@@ -23,11 +23,9 @@ namespace RiodeMVCProject.Services.Implements
             Product pr = new Product()
             {
                 Name = Productvm.Name,
-                Description = Productvm.Description,
                 Category = Productvm.Category,
                 Price = Productvm.Price,
                 Raiting= Productvm.Raiting,
-                StockCount= Productvm.StockCount,
                 ProductImage=await _fileService.UploadAsync(Productvm.ProductImage,Path.Combine("images","img"))
             };
             await _context.AddAsync(pr);

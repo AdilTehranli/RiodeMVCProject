@@ -1,22 +1,36 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.DataAccess;
+using RiodeMVCProject.ExtensionServices.Interfaces;
 using RiodeMVCProject.Models;
 using RiodeMVCProject.Services.Interfaces;
+using RiodeMVCProject.ViewModels.SliderVMs;
 
 namespace RiodeMVCProject.Services.Implements
 {
     public class SliderService : ISliderService
     {
         readonly RiodeDbContext _context;
+        readonly IFileService _fileService;
 
-        public SliderService(RiodeDbContext context)
+        public SliderService(RiodeDbContext context, IFileService fileService)
         {
             _context = context;
+            _fileService = fileService;
         }
 
-        public Task Create(string name)
+        public async Task Create(CreateSliderVM createSlider)
         {
-            throw new NotImplementedException();
+            Slider sd = new Slider()
+            {
+                SliderImage=await _fileService.UploadAsync(createSlider.SliderImage,Path.Combine("images","img")),
+                Description=createSlider.Description,
+                DisCount=createSlider.DisCount,
+                SubTitle=createSlider.SubTitle,
+                Title =createSlider.Title,
+                
+            };
+            await _context.AddAsync(sd);
+            await _context.SaveChangesAsync();
         }
 
         public Task Delete(int? id)

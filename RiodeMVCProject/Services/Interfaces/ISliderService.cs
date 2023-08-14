@@ -1,11 +1,12 @@
 ﻿using RiodeMVCProject.Models;
+using RiodeMVCProject.ViewModels.SliderVMs;
 
 namespace RiodeMVCProject.Services.Interfaces;
 
 public interface ISliderService
 {
 
-    Task Create(string name);
+    Task Create(CreateSliderVM createSlider);
     Task Update(string name);
     Task Delete(int? id);
     Task<ICollection<Slider>> GetAll();

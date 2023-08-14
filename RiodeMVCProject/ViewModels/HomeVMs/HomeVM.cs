@@ -6,5 +6,6 @@ namespace RiodeMVCProject.ViewModels.HomeVMs
     {
         public ICollection<Slider> Sliders { get; set; }
         public ICollection<Banner> Banners { get; set; }
+        public ICollection<Product > Products { get; set; }
     }
 }

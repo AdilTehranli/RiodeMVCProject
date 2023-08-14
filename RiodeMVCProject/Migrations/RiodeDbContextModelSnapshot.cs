@@ -58,10 +58,6 @@ namespace RiodeMVCProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -76,9 +72,6 @@ namespace RiodeMVCProject.Migrations
 
                     b.Property<byte>("Raiting")
                         .HasColumnType("tinyint");
-
-                    b.Property<int>("StockCount")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

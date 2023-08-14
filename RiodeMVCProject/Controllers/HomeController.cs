@@ -22,6 +22,7 @@ namespace RiodeMVCProject.Controllers
             {
                 Sliders = await _sliderService.GetAll(),
                 Banners=await _context.Banners.ToListAsync(),
+                Products=await _context.Products.ToListAsync(),
                 
             };
             return View(vm);
