@@ -22,7 +22,7 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
 
         public async Task<IActionResult>  Index()
         {
-            return View(await _productService.GetAll());
+            return View(await _productService.GetAll(true));
         }
         public IActionResult Create() 
         {
@@ -52,17 +52,18 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Delete(int? id)
         {
-            try
-            {
+            
                 await _productService.Delete(id);
-                TempData["IsDeleted"] = true;
                 return RedirectToAction(nameof(Index));
-            }
-            catch (Exception)
-            {
+           
+        }
+        public async Task<IActionResult> ChangeStatus(int? id)
+        {
 
-                throw;
-            }
+            await _productService.SoftDelete(id);
+            TempData["IsDeleted"] = true;
+            return RedirectToAction(nameof(Index));
+
         }
         public async Task<IActionResult> Update(int? id)
         {

@@ -35,13 +35,17 @@ namespace RiodeMVCProject.Services.Implements
         public async Task Delete(int? id)
         {
             var entity = await GetById(id);
-            _context.Products.Remove(entity);
+            _context.Remove(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<ICollection<Product>> GetAll()
+        public async Task<ICollection<Product>> GetAll(bool takeAll)
         {
-            return await _context.Products.ToListAsync();
+            if (takeAll)
+            {
+                return await _context.Products.ToListAsync();
+            }
+            return await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
         }
 
         public async Task<Product> GetById(int? id)
@@ -50,6 +54,13 @@ namespace RiodeMVCProject.Services.Implements
             var entity= await _context.Products.FindAsync(id);
             if (entity == null) throw new NullReferenceException();
             return entity;
+        }
+
+        public async Task SoftDelete(int? id)
+        {
+            var entity = await GetById(id);
+            entity.IsDeleted = !entity.IsDeleted;
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(UpdateProductVM Productvm)

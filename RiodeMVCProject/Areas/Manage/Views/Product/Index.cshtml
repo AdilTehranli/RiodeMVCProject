@@ -23,7 +23,7 @@
         @foreach (var product in Model)
         {
 
-            <tr>
+            <tr @(product.IsDeleted ? "class=bg-danger" :"")>
                 <td>@product.Id</td>
                 <td>@product.Name </td>
                 <td>@product.Category</td>
@@ -33,7 +33,15 @@
                 <td>
                 </td>
                 <td><a asp-area="Manage" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id" class="btn btn-warning">Update</a></td>
-                <td><a asp-area="Manage" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger delete-btn">Delete</a></td>
+                @if (!product.IsDeleted)
+                {
+                    <td><a asp-area="Manage" asp-controller="Product" asp-action="ChangeStatus" asp-route-id="@product.Id" class="btn btn-danger delete-btn">Delete</a></td>
+                    
+                }else{
+                    <td><a asp-area="Manage" asp-controller="Product" asp-action="ChangeStatus" asp-route-id="@product.Id" class="btn btn-success delete-btn">Edit</a></td>
+                }
+                <td><a asp-area="Manage" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-info">Delete All</a></td>
+
             </tr>
         }
         }

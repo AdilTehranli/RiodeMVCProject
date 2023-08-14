@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3stAImhJ8wUQrGfKVuEQOjpzhNJkKBcfpvRVrwf0E6Q=",
+  "Hash": "QTs40QGQrbTzoUorzjQmOTplCDGyTRU7BxQX1Wo0LD8=",
   "Source": "RiodeMVCProject",
   "BasePath": "_content/RiodeMVCProject",
   "Mode": "Default",
@@ -79133,6 +79133,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\img\\7901e479-50db-44ef-90e2-a3bfe0d6a315.webp"
+    },
+    {
+      "Identity": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\8a8491f8-3a94-4221-bb97-8bd9a1c96be2.webp",
+      "SourceId": "RiodeMVCProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\",
+      "BasePath": "_content/RiodeMVCProject",
+      "RelativePath": "images/img/8a8491f8-3a94-4221-bb97-8bd9a1c96be2.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\img\\8a8491f8-3a94-4221-bb97-8bd9a1c96be2.webp"
     },
     {
       "Identity": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\d71c1710-d1f3-4bac-b044-b9857bf4c39e.webp",

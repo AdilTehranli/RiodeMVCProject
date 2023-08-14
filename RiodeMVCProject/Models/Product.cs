@@ -13,7 +13,8 @@ namespace RiodeMVCProject.Models
         public string Price { get; set; }
         [Required]
         public byte Raiting { get; set; }
-        
+        public bool IsDeleted { get; set; }
+
         public string ProductImage { get; set;}
     }
 }

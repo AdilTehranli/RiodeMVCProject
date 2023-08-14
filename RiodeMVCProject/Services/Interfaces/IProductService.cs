@@ -8,7 +8,8 @@ namespace RiodeMVCProject.Services.Interfaces
         Task Create(CreateProductVM Productvm);
         Task Update(UpdateProductVM Productvm);
         Task Delete(int? id);
-        Task<ICollection<Product>> GetAll();
+        Task SoftDelete(int? id);
+        Task<ICollection<Product>> GetAll(bool takeAll);
         Task<Product> GetById(int? id);
     }
 }
