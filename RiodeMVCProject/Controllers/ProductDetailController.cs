@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.Services.Interfaces;
 
 namespace RiodeMVCProject.Controllers
@@ -19,8 +20,8 @@ namespace RiodeMVCProject.Controllers
         public async Task<IActionResult> Detail(int? id)
         {
 			if (id == null || id <= 0) return BadRequest();
-            var entity = await _productService.GetById(id);
-            if(entity == null) return NotFound();
+			var entity = await _productService.GetTable.Include(p => p.productImages).SingleOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
+			if (entity == null) return NotFound();
 			return View(entity);
         }
      
