@@ -1,0 +1,371 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+}
+@model Product
+<main class="main mt-6 single-product">
+	<div class="page-content mb-10 pb-6">
+		<div class="container">
+			<div class="product product-single row mb-2">
+				<div class="col-md-6">
+					<div class="product-gallery pg-vertical product-gallery-sticky">
+						<div class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1">
+							<figure class="product-image">
+								<img src="images/demos/demo2/product/product-1-580x652.jpg"
+									 data-zoom-image="images/demos/demo2/product/product-1-800x900.jpg"
+									 alt="Blue Pinafore Denim Dress" width="800" height="900"
+									 style="background-color: #f2f3f5;" />
+							</figure>
+							<figure class="product-image">
+								<img src="images/demos/demo2/product/product-2-580x652.jpg"
+									 data-zoom-image="images/demos/demo2/product/product-2-800x900.jpg"
+									 alt="Blue Pinafore Denim Dress" width="800" height="900"
+									 style="background-color: #f2f3f5;" />
+							</figure>
+							<figure class="product-image">
+								<img src="images/demos/demo2/product/product-3-580x652.jpg"
+									 data-zoom-image="images/demos/demo2/product/product-3-800x900.jpg"
+									 alt="Blue Pinafore Denim Dress" width="800" height="900"
+									 style="background-color: #f2f3f5;" />
+							</figure>
+							<figure class="product-image">
+								<img src="images/demos/demo2/product/product-4-580x652.jpg"
+									 data-zoom-image="images/demos/demo2/product/product-4-800x900.jpg"
+									 alt="Blue Pinafore Denim Dress" width="800" height="900"
+									 style="background-color: #f2f3f5;" />
+							</figure>
+							<figure class="product-image">
+								<img src="images/demos/demo2/product/product-5-580x652.jpg"
+									 data-zoom-image="images/demos/demo2/product/product-5-800x900.jpg"
+									 alt="Blue Pinafore Denim Dress" width="800" height="900"
+									 style="background-color: #f2f3f5;" />
+							</figure>
+						</div>
+						<div class="product-thumbs-wrap">
+							<div class="product-thumbs">
+								<div class="product-thumb active">
+									<img src="images/demos/demo2/product/product-1-109x122.jpg"
+										 alt="product thumbnail" width="109" height="122"
+										 style="background-color: #f2f3f5;" />
+								</div>
+								<div class="product-thumb">
+									<img src="images/demos/demo2/product/product-2-109x122.jpg"
+										 alt="product thumbnail" width="109" height="122"
+										 style="background-color: #f2f3f5;" />
+								</div>
+								<div class="product-thumb">
+									<img src="images/demos/demo2/product/product-3-109x122.jpg"
+										 alt="product thumbnail" width="109" height="122"
+										 style="background-color: #f2f3f5;" />
+								</div>
+								<div class="product-thumb">
+									<img src="images/demos/demo2/product/product-4-109x122.jpg"
+										 alt="product thumbnail" width="109" height="122"
+										 style="background-color: #f2f3f5;" />
+								</div>
+								<div class="product-thumb">
+									<img src="images/demos/demo2/product/product-5-109x122.jpg"
+										 alt="product thumbnail" width="109" height="122"
+										 style="background-color: #f2f3f5;" />
+								</div>
+							</div>
+							<button class="thumb-up disabled"><i class="fas fa-chevron-left"></i></button>
+							<button class="thumb-down disabled"><i class="fas fa-chevron-right"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="product-details">
+						<div class="product-navigation">
+							<ul class="breadcrumb breadcrumb-lg">
+								<li><a href="demo2.html"><i class="d-icon-home"></i></a></li>
+								<li><a href="#" class="active">Products</a></li>
+								<li>Detail</li>
+							</ul>
+
+							<ul class="product-nav">
+								<li class="product-nav-prev">
+									<a href="#">
+										<i class="d-icon-arrow-left"></i> Prev
+										<span class="product-nav-popup">
+											<img src="images/product/product-thumb-prev.jpg"
+												 alt="product thumbnail" width="110" height="123">
+											<span class="product-name">Sed egtas Dnte Comfort</span>
+										</span>
+									</a>
+								</li>
+								<li class="product-nav-next">
+									<a href="#">
+										Next <i class="d-icon-arrow-right"></i>
+										<span class="product-nav-popup">
+											<img src="images/product/product-thumb-next.jpg"
+												 alt="product thumbnail" width="110" height="123">
+											<span class="product-name">Sed egtas Dnte Comfort</span>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<h1 class="product-name">@Model.Name</h1>
+						<div class="product-meta">
+							SKU: <span class="product-sku">12345670</span>
+							BRAND: <span class="product-brand">The Northland</span>
+						</div>
+						<div class="product-price mb-2">$@Model.Price</div>
+						<div class="ratings-container">
+							<div class="ratings-full">
+								<span class="ratings" style="width:80%"></span>
+								<span class="tooltiptext tooltip-top"></span>
+							</div>
+							<a href="#product-tab-reviews" class="link-to-tab rating-reviews">( 6 reviews )</a>
+						</div>
+						<p class="product-short-desc">
+							Sed egestas, ante et vulputate volutpat, eros pede semper
+							est, vitae luctus metus libero eu augue. Morbi purus liberpuro ate vol faucibus
+							adipiscing.
+						</p>
+
+						<hr class="product-divider">
+
+						<div class="product-form product-qty">
+							<div class="product-form-group">
+								<div class="input-group mr-2">
+									<button class="quantity-minus d-icon-minus"></button>
+									<input class="quantity form-control" type="number" min="1" max="1000000">
+									<button class="quantity-plus d-icon-plus"></button>
+								</div>
+								<button class="btn-product btn-cart text-normal ls-normal font-weight-semi-bold">
+									<i class="d-icon-bag"></i>Add to
+									Cart
+								</button>
+							</div>
+						</div>
+
+						<hr class="product-divider mb-3">
+
+						<div class="product-footer">
+							<div class="social-links mr-4">
+								<a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
+								<a href="#" class="social-link social-twitter fab fa-twitter"></a>
+								<a href="#" class="social-link social-pinterest fab fa-pinterest-p"></a>
+							</div>
+							<span class="divider d-lg-show"></span>
+							<div class="product-action">
+								<a href="#" class="btn-product btn-wishlist mr-6">
+									<i class="d-icon-heart"></i>Add to
+									wishlist
+								</a>
+								<a href="#" class="btn-product btn-compare">
+									<i class="d-icon-compare"></i>Add to
+									compare
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<section class="pt-3 mt-10">
+				<h2 class="title title-center ls-normal">Related Products</h2>
+
+				<div class="owl-carousel owl-theme owl-nav-full row cols-2 cols-md-3 cols-lg-4"
+					 data-owl-options="{
+							'items': 5,
+							'nav': false,
+							'loop': false,
+							'dots': true,
+							'margin': 20,
+							'responsive': {
+								'0': {
+									'items': 2
+								},
+								'768': {
+									'items': 3
+								},
+								'992': {
+									'items': 4,
+									'dots': false,
+									'nav': true
+								}
+							}
+						}">
+					<div class="product">
+						<figure class="product-media">
+							<a href="demo2-product.html">
+								<img src="images/demos/demo2/product/featured/1.jpg" alt="product" width="280"
+									 height="315" style="background-color: #f2f3f5;" />
+							</a>
+							<div class="product-label-group">
+								<label class="product-label label-new">new</label>
+							</div>
+							<div class="product-action-vertical">
+								<a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+								   data-target="#addCartModal" title="Add to cart">
+									<i class="d-icon-bag"></i>
+								</a>
+								<a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+									<i class="d-icon-heart"></i>
+								</a>
+							</div>
+							<div class="product-action">
+								<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+							</div>
+						</figure>
+						<div class="product-details">
+							<div class="product-cat">
+								<a href="demo2-shop.html">Clothing</a>
+							</div>
+							<h3 class="product-name">
+								<a href="demo2-product.html">Women's Fashion T Shirt</a>
+							</h3>
+							<div class="product-price">
+								<ins class="new-price">$199.00</ins><del class="old-price">$210.00</del>
+							</div>
+							<div class="ratings-container">
+								<div class="ratings-full">
+									<span class="ratings" style="width:100%"></span>
+									<span class="tooltiptext tooltip-top"></span>
+								</div>
+								<a href="demo2-product.html" class="rating-reviews">
+									( <span class="review-count">6</span> reviews
+									)
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="product">
+						<figure class="product-media">
+							<a href="demo2-product.html">
+								<img src="images/demos/demo2/product/featured/2.jpg" alt="product" width="280"
+									 height="315" style="background-color: #f2f3f5;" />
+							</a>
+							<div class="product-action-vertical">
+								<a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+								   data-target="#addCartModal" title="Add to cart">
+									<i class="d-icon-bag"></i>
+								</a>
+								<a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+									<i class="d-icon-heart"></i>
+								</a>
+							</div>
+							<div class="product-action">
+								<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+							</div>
+						</figure>
+						<div class="product-details">
+							<div class="product-cat">
+								<a href="demo2-shop.html">Clothing</a>
+							</div>
+							<h3 class="product-name">
+								<a href="demo2-product.html">Men's Summer Clothing</a>
+							</h3>
+							<div class="product-price">
+								<span class="price">$35.00</span>
+							</div>
+							<div class="ratings-container">
+								<div class="ratings-full">
+									<span class="ratings" style="width:100%"></span>
+									<span class="tooltiptext tooltip-top"></span>
+								</div>
+								<a href="demo2-product.html" class="rating-reviews">
+									( <span class="review-count">6</span> reviews
+									)
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="product">
+						<figure class="product-media">
+							<a href="demo2-product.html">
+								<img src="images/demos/demo2/product/featured/3.jpg" alt="product" width="280"
+									 height="315" style="background-color: #f2f3f5;" />
+							</a>
+
+							<div class="product-label-group">
+								<label class="product-label label-sale">27% off</label>
+							</div>
+							<div class="product-action-vertical">
+								<a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+								   data-target="#addCartModal" title="Add to cart">
+									<i class="d-icon-bag"></i>
+								</a>
+								<a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+									<i class="d-icon-heart"></i>
+								</a>
+							</div>
+							<div class="product-action">
+								<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+							</div>
+						</figure>
+						<div class="product-details">
+							<div class="product-cat">
+								<a href="demo2-shop.html">Clothing</a>
+							</div>
+							<h3 class="product-name">
+								<a href="demo2-product.html">Black Fashion T Shirt</a>
+							</h3>
+							<div class="product-price">
+								<span class="price">$19.00</span>
+							</div>
+							<div class="ratings-container">
+								<div class="ratings-full">
+									<span class="ratings" style="width:100%"></span>
+									<span class="tooltiptext tooltip-top"></span>
+								</div>
+								<a href="demo2-product.html" class="rating-reviews">
+									( <span class="review-count">6</span> reviews
+									)
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="product">
+						<figure class="product-media">
+							<a href="demo2-product.html">
+								<img src="images/demos/demo2/product/featured/4.jpg" alt="product" width="280"
+									 height="315" style="background-color: #f2f3f5;" />
+							</a>
+							<div class="product-action-vertical">
+								<a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+								   data-target="#addCartModal" title="Add to cart">
+									<i class="d-icon-bag"></i>
+								</a>
+								<a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+									<i class="d-icon-heart"></i>
+								</a>
+							</div>
+							<div class="product-action">
+								<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+							</div>
+						</figure>
+						<div class="product-details">
+							<div class="product-cat">
+								<a href="demo2-shop.html">Clothing</a>
+							</div>
+							<h3 class="product-name">
+								<a href="demo2-product.html">Men's Fashion T Shirt</a>
+							</h3>
+							<div class="product-price">
+								<ins class="new-price">$98.00</ins><del class="old-price">$210.00</del>
+							</div>
+							<div class="ratings-container">
+								<div class="ratings-full">
+									<span class="ratings" style="width:100%"></span>
+									<span class="tooltiptext tooltip-top"></span>
+								</div>
+								<a href="demo2-product.html" class="rating-reviews">
+									( <span class="review-count">6</span> reviews
+									)
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</main>
+

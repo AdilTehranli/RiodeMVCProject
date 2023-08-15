@@ -18,7 +18,9 @@ namespace RiodeMVCProject.Services.Implements
             _fileService = fileService;
         }
 
-        public  async Task Create(CreateProductVM Productvm)
+        public IQueryable<Product> GetTable { get => _context.Set<Product>(); }
+
+        public async Task Create(CreateProductVM Productvm)
         {
             Product entity = new Product()
             {
@@ -48,10 +50,17 @@ namespace RiodeMVCProject.Services.Implements
 
         public async Task Delete(int? id)
         {
-            var entity = await GetById(id);
+            var entity = await GetById(id,true);
             _context.Remove(entity);
             _fileService.Delete(entity.ProductImage);
-            await _context.SaveChangesAsync();
+			if (entity.productImages != null)
+			{
+				foreach (var item in entity.productImages)
+				{
+					_fileService.Delete(item.Name);
+				}
+			}
+			await _context.SaveChangesAsync();
         }
 
         public async Task<ICollection<Product>> GetAll(bool takeAll)
@@ -63,12 +72,21 @@ namespace RiodeMVCProject.Services.Implements
             return await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
         }
 
-        public async Task<Product> GetById(int? id)
+        public async Task<Product> GetById(int? id, bool takeAll = false)
         {
-            if (id == null || id < 1) throw new ArgumentException();
-            var entity= await _context.Products.FindAsync(id);
-            if (entity == null) throw new NullReferenceException();
-            return entity;
+
+			if (id == null || id < 1) throw new ArgumentException();
+			Product? entity;
+			if (takeAll)
+			{
+				entity = await _context.Products.FindAsync(id);
+			}
+			else
+			{
+				entity = await _context.Products.SingleOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
+			}
+			if (entity is null) throw new NullReferenceException();
+			return entity;
         }
 
         public async Task SoftDelete(int? id)

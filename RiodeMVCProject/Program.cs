@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using RiodeMVCProject.DataAccess;
 using RiodeMVCProject.Services;
 
@@ -6,9 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddService();
 // Add services to the container.
+
+
 builder.Services.AddDbContext<RiodeDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration["ConnectionStrings:MSSQL"]);
+
 });
 builder.Services.AddControllersWithViews();
 
