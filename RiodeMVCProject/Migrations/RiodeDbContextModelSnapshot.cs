@@ -81,6 +81,28 @@ namespace RiodeMVCProject.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("RiodeMVCProject.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("productImages");
+                });
+
             modelBuilder.Entity("RiodeMVCProject.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -133,6 +155,22 @@ namespace RiodeMVCProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sliders");
+                });
+
+            modelBuilder.Entity("RiodeMVCProject.Models.ProductImage", b =>
+                {
+                    b.HasOne("RiodeMVCProject.Models.Product", "Product")
+                        .WithMany("productImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("RiodeMVCProject.Models.Product", b =>
+                {
+                    b.Navigation("productImages");
                 });
 #pragma warning restore 612, 618
         }

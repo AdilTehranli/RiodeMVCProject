@@ -20,7 +20,7 @@ namespace RiodeMVCProject.Services.Implements
 
         public  async Task Create(CreateProductVM Productvm)
         {
-            Product pr = new Product()
+            Product entity = new Product()
             {
                 Name = Productvm.Name,
                 Category = Productvm.Category,
@@ -28,7 +28,21 @@ namespace RiodeMVCProject.Services.Implements
                 Raiting= Productvm.Raiting,
                 ProductImage=await _fileService.UploadAsync(Productvm.ProductImage,Path.Combine("images","img"))
             };
-            await _context.AddAsync(pr);
+            if (Productvm.ImageFiles != null)
+            {
+            List<ProductImage> imgs = new();
+                foreach (var item in Productvm.ImageFiles)
+                {
+                    string filename = await _fileService.UploadAsync(item, Path.Combine("images", "img"));
+                   
+                    imgs.Add(new ProductImage
+                    {
+                        Name = filename,
+                    });
+                }
+                entity.productImages= imgs;
+            }
+            await _context.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
@@ -36,6 +50,7 @@ namespace RiodeMVCProject.Services.Implements
         {
             var entity = await GetById(id);
             _context.Remove(entity);
+            _fileService.Delete(entity.ProductImage);
             await _context.SaveChangesAsync();
         }
 

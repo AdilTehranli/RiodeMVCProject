@@ -14,5 +14,6 @@ namespace RiodeMVCProject.ViewModels.ProductVMs
         public byte Raiting { get; set; }
         [Required]
         public IFormFile ProductImage { get; set; }
+        public List<IFormFile> ImageFiles { get; set; }
     }
 }

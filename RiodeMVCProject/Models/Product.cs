@@ -16,5 +16,6 @@ namespace RiodeMVCProject.Models
         public bool IsDeleted { get; set; }
 
         public string ProductImage { get; set;}
+        public ICollection<ProductImage>? productImages { get; set; }
     }
 }

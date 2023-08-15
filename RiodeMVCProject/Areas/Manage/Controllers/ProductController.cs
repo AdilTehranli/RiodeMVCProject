@@ -36,9 +36,20 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                 if (createProduct.ProductImage != null)
                 {
                     if (!createProduct.ProductImage.IsTypeValid("image"))
-                        ModelState.AddModelError("ImageFile", "Wrong file type");
+                        ModelState.AddModelError("ProductImage", "Wrong file type");
                     if (!createProduct.ProductImage.IsSizeValid(2))
-                        ModelState.AddModelError("ImageFile", "File max size is 2mb");
+                        ModelState.AddModelError("ProductImage", "File max size is 2mb");
+                }
+                if(createProduct.ImageFiles != null)
+                {
+                    foreach (var img in createProduct.ImageFiles)
+                    {
+
+                    if (!img.IsTypeValid("image"))
+                        ModelState.AddModelError("ImageFile", "Wrong file type"+img.FileName);
+                    if (!img.IsSizeValid(2))
+                        ModelState.AddModelError("ImageFile", "File max size is 2mb" + img.FileName);
+                    }
                 }
                 if (!ModelState.IsValid) return View();
                 await _productService.Create(createProduct);
@@ -54,7 +65,8 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
         {
             
                 await _productService.Delete(id);
-                return RedirectToAction(nameof(Index));
+            TempData["IsDeleted"] = true;
+            return RedirectToAction(nameof(Index));
            
         }
         public async Task<IActionResult> ChangeStatus(int? id)
