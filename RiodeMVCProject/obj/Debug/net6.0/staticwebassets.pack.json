@@ -7461,6 +7461,10 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\products\\aef0b086-dfa0-48eb-8cc2-ff91be9a805c.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\assets\\imgs\\products\\de4753bb-e258-48c6-95a4-5e590ce64341.webp",
+      "PackagePath": "staticwebassets\\assets\\imgs\\products\\de4753bb-e258-48c6-95a4-5e590ce64341.webp"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\css\\demo-beauty.min.css",
       "PackagePath": "staticwebassets\\css\\demo-beauty.min.css"
     },
@@ -18605,12 +18609,16 @@
       "PackagePath": "staticwebassets\\images\\img\\039f6be1-9996-4c12-9de5-a1869b93197b.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\03ad487e-dfd0-404c-84dc-95185beb9de1.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\03ad487e-dfd0-404c-84dc-95185beb9de1.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\0ab86ad2-a0a7-4db2-aec3-0f874b545385.png",
       "PackagePath": "staticwebassets\\images\\img\\0ab86ad2-a0a7-4db2-aec3-0f874b545385.png"
     },
     {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\0f6108f3-5769-4baa-8d75-9d0a8b1e2ebf.jpg",
-      "PackagePath": "staticwebassets\\images\\img\\0f6108f3-5769-4baa-8d75-9d0a8b1e2ebf.jpg"
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\0ad02e6f-1e8e-401f-afef-5ed560170ae6.webp",
+      "PackagePath": "staticwebassets\\images\\img\\0ad02e6f-1e8e-401f-afef-5ed560170ae6.webp"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\140169a0-d114-4419-94e4-487e63a88f1c.webp",
@@ -18621,20 +18629,52 @@
       "PackagePath": "staticwebassets\\images\\img\\15405496-9627-493e-8f2b-b76038e20590.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\157a327f-9245-4a1c-9c30-c46d2f9db375.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\157a327f-9245-4a1c-9c30-c46d2f9db375.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\15f3db16-eef5-4e2c-90fd-5caa54768e96.webp",
       "PackagePath": "staticwebassets\\images\\img\\15f3db16-eef5-4e2c-90fd-5caa54768e96.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\171a3f83-3424-4a2f-92dc-627de6d2948f.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\171a3f83-3424-4a2f-92dc-627de6d2948f.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\17be18c8-42f6-42fc-a143-379cce05ff33.webp",
       "PackagePath": "staticwebassets\\images\\img\\17be18c8-42f6-42fc-a143-379cce05ff33.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\1b3d9d99-0b70-467d-97f5-054c9e597851.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\1b3d9d99-0b70-467d-97f5-054c9e597851.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\26f34977-28a9-4c39-a73b-d5d79bfa11f1.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\26f34977-28a9-4c39-a73b-d5d79bfa11f1.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\272ea7d6-863a-4304-8ebb-e837636b5925.jpg",
       "PackagePath": "staticwebassets\\images\\img\\272ea7d6-863a-4304-8ebb-e837636b5925.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\2895657e-8034-46a9-9b0f-bba8f674d775.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\2895657e-8034-46a9-9b0f-bba8f674d775.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\2f078bb7-7ace-44fc-bdc2-9c3632b1a218.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\2f078bb7-7ace-44fc-bdc2-9c3632b1a218.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\360baa1a-531b-49b9-a214-ed9acb57a742.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\360baa1a-531b-49b9-a214-ed9acb57a742.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\382ced9f-93e4-462e-9bca-02f02d81540c.webp",
       "PackagePath": "staticwebassets\\images\\img\\382ced9f-93e4-462e-9bca-02f02d81540c.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\41793292-e9f6-4d6d-85a3-851dfae7c815.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\41793292-e9f6-4d6d-85a3-851dfae7c815.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\43fd1f36-fdc5-4cbe-9efd-ec279f27f0fa.jpg",
@@ -18657,12 +18697,28 @@
       "PackagePath": "staticwebassets\\images\\img\\5483c536-6c8a-47ba-9670-2505a918194c.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\5ab6728e-566f-46ff-8cf6-226cc3102b82.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\5ab6728e-566f-46ff-8cf6-226cc3102b82.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\5df3370f-b836-48ce-bc01-94b4f2ea67f3.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\5df3370f-b836-48ce-bc01-94b4f2ea67f3.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\5e4165b4-26f6-458c-8291-a4f3465ce69f.jpg",
       "PackagePath": "staticwebassets\\images\\img\\5e4165b4-26f6-458c-8291-a4f3465ce69f.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\60b0a12a-d955-443d-a8e4-3c1411dd6e00.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\60b0a12a-d955-443d-a8e4-3c1411dd6e00.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\654c2ecc-b31b-4de4-9044-5b58a4e64373.webp",
       "PackagePath": "staticwebassets\\images\\img\\654c2ecc-b31b-4de4-9044-5b58a4e64373.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\709eaaac-3e17-438c-85a5-e1c719a4a2fa.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\709eaaac-3e17-438c-85a5-e1c719a4a2fa.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\7727c1b6-e935-4466-ba09-ebc2abda0ef0.webp",
@@ -18671,6 +18727,10 @@
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\7901e479-50db-44ef-90e2-a3bfe0d6a315.webp",
       "PackagePath": "staticwebassets\\images\\img\\7901e479-50db-44ef-90e2-a3bfe0d6a315.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\7c9ade30-b85b-431f-97cd-b0d74f979329.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\7c9ade30-b85b-431f-97cd-b0d74f979329.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\7cd9d146-7fc3-472e-a1d7-f9e4770859a9.jpg",
@@ -18685,6 +18745,14 @@
       "PackagePath": "staticwebassets\\images\\img\\833b83d8-0d48-47c8-aa6c-7ee77b28b7bf.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\8413c7e5-bed3-40ca-a81d-18e3880ecc82.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\8413c7e5-bed3-40ca-a81d-18e3880ecc82.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\898ffa03-88c7-4e18-8cac-469bf8bc288f.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\898ffa03-88c7-4e18-8cac-469bf8bc288f.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\89c84e3f-dfed-4c72-b273-866c13bc6c94.webp",
       "PackagePath": "staticwebassets\\images\\img\\89c84e3f-dfed-4c72-b273-866c13bc6c94.webp"
     },
@@ -18697,16 +18765,56 @@
       "PackagePath": "staticwebassets\\images\\img\\8c59b96f-a102-45f8-aed8-bc27e651e6b6.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\8ef49793-95a1-4f2a-90e6-af8e4f335b4e.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\8ef49793-95a1-4f2a-90e6-af8e4f335b4e.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\91babf30-57d4-4fc4-9948-11ffe860a594.webp",
       "PackagePath": "staticwebassets\\images\\img\\91babf30-57d4-4fc4-9948-11ffe860a594.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\9b2af64c-5620-470b-93ea-990b4dca22cc.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\9b2af64c-5620-470b-93ea-990b4dca22cc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\9fe0944f-b89d-40ff-8998-3113517b7cba.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\9fe0944f-b89d-40ff-8998-3113517b7cba.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\a43931b1-3830-4e5c-8312-fba567490b26.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\a43931b1-3830-4e5c-8312-fba567490b26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\a64dfda6-3336-4471-b287-4da49d4ae6a4.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\a64dfda6-3336-4471-b287-4da49d4ae6a4.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\a6f0ff7d-bac0-428a-b90c-8c9a17b043b2.webp",
       "PackagePath": "staticwebassets\\images\\img\\a6f0ff7d-bac0-428a-b90c-8c9a17b043b2.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\a792cca7-c80a-4997-8e0d-411fc2729a67.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\a792cca7-c80a-4997-8e0d-411fc2729a67.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\ab8f605a-b024-4a02-85e4-6df5a980bb84.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\ab8f605a-b024-4a02-85e4-6df5a980bb84.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\ab9ad56f-6e3f-4516-aca7-fd0d5d04f44e.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\ab9ad56f-6e3f-4516-aca7-fd0d5d04f44e.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\ae08ef1c-a159-4418-857a-daaa79183c72.jpg",
       "PackagePath": "staticwebassets\\images\\img\\ae08ef1c-a159-4418-857a-daaa79183c72.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\b1fc9b09-619e-4227-86fc-46a1f324bd66.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\b1fc9b09-619e-4227-86fc-46a1f324bd66.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\b26f9ae7-2e81-44c9-a4c1-299a5ae006ed.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\b26f9ae7-2e81-44c9-a4c1-299a5ae006ed.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\bb19aff1-7be4-458e-8b3b-34195ff184f6.webp",
@@ -18717,16 +18825,32 @@
       "PackagePath": "staticwebassets\\images\\img\\c07fc782-0887-496e-bf76-a9c6fc797acd.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\c454e42d-668f-44cc-9e03-cbcc1aa377a8.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\c454e42d-668f-44cc-9e03-cbcc1aa377a8.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\c5c08197-3b3d-4967-a689-45c0651acb63.webp",
       "PackagePath": "staticwebassets\\images\\img\\c5c08197-3b3d-4967-a689-45c0651acb63.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\c60dd5d3-17ca-4b96-aaf7-d034bd45e472.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\c60dd5d3-17ca-4b96-aaf7-d034bd45e472.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\cf89e438-dadc-4063-849a-161c16522f0d.webp",
       "PackagePath": "staticwebassets\\images\\img\\cf89e438-dadc-4063-849a-161c16522f0d.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\d06d785c-dcb9-487d-97cb-8fde532a7086.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\d06d785c-dcb9-487d-97cb-8fde532a7086.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\d07d4ca6-0c7e-441a-b5ba-0be03f7442fe.webp",
       "PackagePath": "staticwebassets\\images\\img\\d07d4ca6-0c7e-441a-b5ba-0be03f7442fe.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\d2b35609-9515-46e5-9c74-dca67ff8e029.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\d2b35609-9515-46e5-9c74-dca67ff8e029.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\d55cd39b-2dcb-4a64-9a46-eb2548cd30e1.webp",
@@ -18753,8 +18877,16 @@
       "PackagePath": "staticwebassets\\images\\img\\e7dcd069-bead-4e62-ba4b-bf64e584ca56.webp"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\ed4cb9fd-b0c4-4fa4-9e18-56a888d68452.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\ed4cb9fd-b0c4-4fa4-9e18-56a888d68452.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\f1a4179c-75f5-41ec-89c5-cb2e60de46dc.webp",
       "PackagePath": "staticwebassets\\images\\img\\f1a4179c-75f5-41ec-89c5-cb2e60de46dc.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\f35df0fd-14ff-42bf-a5b4-2fc179b23c43.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\f35df0fd-14ff-42bf-a5b4-2fc179b23c43.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\f36dec34-6620-4344-a442-133d6b53c7c0.jpg",
@@ -18763,6 +18895,10 @@
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\f9956c6e-13fd-4cb5-a375-4e9ca1983521.webp",
       "PackagePath": "staticwebassets\\images\\img\\f9956c6e-13fd-4cb5-a375-4e9ca1983521.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\fc2186ce-d430-4302-99c6-dc4c900e308d.jpg",
+      "PackagePath": "staticwebassets\\images\\img\\fc2186ce-d430-4302-99c6-dc4c900e308d.jpg"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\fcd5a170-78f8-4b95-8136-4f4f44ced26e.jpg",

@@ -29,7 +29,15 @@
                 <td>@product.Category</td>
                 <td>@product.Price</td>
                 <td>@product.Raiting</td>
-                <td><img src="~/@product.ProductImage" width="50"/></td>
+                @if (product.ProductImage.StartsWith("http"))
+                {
+                    <td><img src="@product.ProductImage" width="50" /></td>
+                }
+                else
+                {
+                    <td><img src="~/@product.ProductImage" width="50" /></td>
+
+                }
                 <td>
                 </td>
                 <td><a asp-area="Manage" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id" class="btn btn-warning">Update</a></td>

@@ -114,5 +114,11 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
             await _productService.Update(id, updateVm);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> DeleteImage(int id)
+        {
+            if (id == null || id <= 0) return BadRequest();
+            await _productService.DeleteImage(id);
+            return Ok();
+        }
     }
 }

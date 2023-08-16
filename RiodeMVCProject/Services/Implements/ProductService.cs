@@ -63,6 +63,16 @@ namespace RiodeMVCProject.Services.Implements
 			await _context.SaveChangesAsync();
         }
 
+        public async Task DeleteImage(int? id)
+        {
+            if (id == null || id <= 0) throw new ArgumentException();
+            var entity = await _context.productImages.FindAsync(id);
+            if (entity == null) throw new NullReferenceException();
+            _fileService.Delete(entity.Name);
+            _context.productImages.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<ICollection<Product>> GetAll(bool takeAll)
         {
             if (takeAll)
@@ -104,10 +114,10 @@ namespace RiodeMVCProject.Services.Implements
             entity.Name = Productvm.Name;
             entity.Price=Productvm.Price;
             entity.Raiting = Productvm.Raiting;
-            if(entity.ProductImage != null)
+            if(Productvm.ProductImage != null)
             {
                 _fileService.Delete(entity.ProductImage);
-                _fileService.UploadAsync(Productvm.ProductImage, Path.Combine("images", "img"));
+             entity.ProductImage =  await _fileService.UploadAsync(Productvm.ProductImage, Path.Combine("images","img"));
             }
 			if (Productvm.ProductImages != null)
 			{
@@ -117,9 +127,9 @@ namespace RiodeMVCProject.Services.Implements
 
 					ProductImage prodImg = new ProductImage
 					{
-						Name = await _fileService.UploadAsync(img, Path.Combine("assets", "imgs", "products"))
+						Name = await _fileService.UploadAsync(img, Path.Combine("images","img"))
 					};
-					entity.productImages.Add(prodImg);
+					entity.productImages.Add(prodImg);  
 
 				}
 			}
