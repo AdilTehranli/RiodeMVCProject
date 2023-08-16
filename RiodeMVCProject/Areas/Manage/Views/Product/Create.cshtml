@@ -2,7 +2,11 @@
 @{
     ViewData["Title"] = "Create";
 }
+@section styles{
+    <link href="~/lib/select2/css/select2.min.css" rel="stylesheet" />
+}
 @model CreateProductVM
+
 <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label>Name</label>
@@ -15,11 +19,7 @@
         <span class="text-danger" asp-validation-for="ProductImage"></span>
     </div>
 
-    <div class="mb-3">
-        <label>Category</label>
-        <input class="form-control" asp-for="Category">
-        <span class="text-danger" asp-validation-for="Category"></span>
-    </div>
+
     <div class="mb-3">
         <label>Raiting</label>
         <input class="form-control" asp-for="Raiting">
@@ -35,6 +35,23 @@
         <input class="form-control" asp-for="ImageFiles">
         <span class="text-danger" asp-validation-for="ImageFiles"></span>
     </div>
+    <div class="mb-3">
+        <label>categories</label>
+        <select class="salam w-100" asp-for="CategoryIds" asp-items="@ViewBag.Categories" multiple="multiple"></select>
+
+        </select>
+        <span class="text-danger" asp-validation-for="CategoryIds"></span>
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+@section scripts{
+    <script src="~/lib/select2/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.salam').select2({
+                maximumSelectionLength: 4
+            });
+        });
+    </script>
+}

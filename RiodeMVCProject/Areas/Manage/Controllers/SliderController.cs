@@ -3,97 +3,96 @@ using RiodeMVCProject.Extensions;
 using RiodeMVCProject.Services.Interfaces;
 using RiodeMVCProject.ViewModels.SliderVMs;
 
-namespace RiodeMVCProject.Areas.Manage.Controllers
+namespace RiodeMVCProject.Areas.Manage.Controllers;
+
+[Area("Manage")]
+public class SliderController : Controller
 {
-    [Area("Manage")]
-    public class SliderController : Controller
+    readonly ISliderService _sliderservice;
+
+    public SliderController(ISliderService sliderservice)
     {
-        readonly ISliderService _sliderservice;
+        _sliderservice = sliderservice;
+    }
 
-        public SliderController(ISliderService sliderservice)
+    public async Task<IActionResult>Index()
+    {
+        try
         {
-            _sliderservice = sliderservice;
+
+        return View(await _sliderservice.GetAll());
         }
-
-        public async Task<IActionResult>Index()
+        catch (Exception)
         {
-            try
-            {
 
-            return View(await _sliderservice.GetAll());
-            }
-            catch (Exception)
-            {
-
-                return NotFound();
-            }
+            return NotFound();
         }
-        public IActionResult Create()
+    }
+    public IActionResult Create()
+    {
+        return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateSliderVM sliderVM)
+    {
+        try
         {
-            return View();
+            if(sliderVM.SliderImage != null)
+            {
+                if (!sliderVM.SliderImage.IsTypeValid("image"))
+                    ModelState.AddModelError("ImageFile", "Wrong file type");
+                if (!sliderVM.SliderImage.IsSizeValid(2))
+                    ModelState.AddModelError("ImageFile", "File max size is 2mb");
+            }
+            if (!ModelState.IsValid) return View();
+            await _sliderservice.Create(sliderVM);
+            return RedirectToAction(nameof(Index));
         }
-        [HttpPost]
-        public async Task<IActionResult> Create(CreateSliderVM sliderVM)
+        catch (Exception)
         {
-            try
-            {
-                if(sliderVM.SliderImage != null)
-                {
-                    if (!sliderVM.SliderImage.IsTypeValid("image"))
-                        ModelState.AddModelError("ImageFile", "Wrong file type");
-                    if (!sliderVM.SliderImage.IsSizeValid(2))
-                        ModelState.AddModelError("ImageFile", "File max size is 2mb");
-                }
-                if (!ModelState.IsValid) return View();
-                await _sliderservice.Create(sliderVM);
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception)
-            {
 
-                return NotFound();
-            }
+            return NotFound();
         }
-        public async Task<IActionResult> Delete(int? id)
+    }
+    public async Task<IActionResult> Delete(int? id)
+    {
+        try
         {
-            try
-            {
-                await _sliderservice.Delete(id);
-                TempData["IsDeleted"] = true;
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            await _sliderservice.Delete(id);
+            TempData["IsDeleted"] = true;
+            return RedirectToAction(nameof(Index));
         }
-        public async Task<IActionResult>  Update(int? id)
+        catch (Exception)
         {
-            try
-            {
 
-            return View(await _sliderservice.GetById(id));
-            }
-            catch (Exception)
-            {
-
-                return NotFound();
-            }
+            throw;
         }
-        [HttpPost]
-        public async Task<IActionResult> Update(int? id,UpdateSliderVM sliderVM)
+    }
+    public async Task<IActionResult>  Update(int? id)
+    {
+        try
         {
-            try
-            {
-                await _sliderservice.Update(sliderVM);
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception)
-            {
 
-                throw new Exception();
-            }
+        return View(await _sliderservice.GetById(id));
+        }
+        catch (Exception)
+        {
+
+            return NotFound();
+        }
+    }
+    [HttpPost]
+    public async Task<IActionResult> Update(int? id,UpdateSliderVM sliderVM)
+    {
+        try
+        {
+            await _sliderservice.Update(sliderVM);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+
+            throw new Exception();
         }
     }
 }

@@ -11,23 +11,38 @@ namespace RiodeMVCProject.Services.Implements
     {
         readonly RiodeDbContext _context;
         readonly IFileService _fileService;
+        readonly ICategoryService _categoryService;
 
-        public ProductService(RiodeDbContext context, IFileService fileService)
+        public ProductService(RiodeDbContext context, IFileService fileService, ICategoryService categoryService)
         {
             _context = context;
             _fileService = fileService;
+            _categoryService = categoryService;
         }
 
         public IQueryable<Product> GetTable { get => _context.Set<Product>(); }
 
         public async Task Create(CreateProductVM Productvm)
         {
+            if (Productvm.CategoryIds.Count > 4)
+                throw new Exception();
+            if (!await _categoryService.IsAllExist(Productvm.CategoryIds))
+                throw new ArgumentException();
+            List<ProductCategory> prodCategories = new List<ProductCategory>();
+            foreach (var id in Productvm.CategoryIds)
+            {
+                prodCategories.Add(new ProductCategory
+                {
+                    CategoryId = id
+                });
+            }
             Product entity = new Product()
             {
                 Name = Productvm.Name,
                 Price = Productvm.Price,
                 Raiting= Productvm.Raiting,
-                ProductImage=await _fileService.UploadAsync(Productvm.ProductImage,Path.Combine("images","img"))
+                ProductImage=await _fileService.UploadAsync(Productvm.ProductImage,Path.Combine("images","img")),
+                ProductCategories=prodCategories
             };
             if (Productvm.ImageFiles != null)
             {

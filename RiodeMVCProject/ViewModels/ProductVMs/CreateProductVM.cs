@@ -15,5 +15,6 @@ namespace RiodeMVCProject.ViewModels.ProductVMs
         [Required]
         public IFormFile ProductImage { get; set; }
         public List<IFormFile> ImageFiles { get; set; }
+        public List<int> CategoryIds { get; set; }
     }
 }

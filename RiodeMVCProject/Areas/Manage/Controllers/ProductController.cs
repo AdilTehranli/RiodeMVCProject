@@ -15,19 +15,23 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
     {
        readonly RiodeDbContext _context;
         readonly IProductService _productService;
+        readonly ICategoryService _categoryService;
 
-        public ProductController(RiodeDbContext context, IProductService productService)
+        public ProductController(RiodeDbContext context, IProductService productService, ICategoryService categoryService)
         {
             _context = context;
             _productService = productService;
+            _categoryService = categoryService;
         }
 
         public async Task<IActionResult>  Index()
         {
-            return View(await _productService.GetAll(true));
+            return View(await _productService.GetTable.Include(p => p.ProductCategories).ThenInclude(pc => pc.Category).ToListAsync());
         }
         public IActionResult Create() 
         {
+            ViewBag.Categories = new SelectList(_categoryService.GetTable, "Id", "Name");
+
             return View();
         }
         [HttpPost]
@@ -41,8 +45,9 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                         ModelState.AddModelError("ProductImage", "Wrong file type");
                     if (!createProduct.ProductImage.IsSizeValid(2))
                         ModelState.AddModelError("ProductImage", "File max size is 2mb");
+
                 }
-                if(createProduct.ImageFiles != null)
+                if (createProduct.ImageFiles != null)
                 {
                     foreach (var img in createProduct.ImageFiles)
                     {
@@ -53,7 +58,11 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                         ModelState.AddModelError("ImageFile", "File max size is 2mb" + img.FileName);
                     }
                 }
-                if (!ModelState.IsValid) return View();
+                //if (!ModelState.IsValid)
+                //{
+                ViewBag.Categories = new SelectList(_categoryService.GetTable, "Id", "Name");
+                //    return View(createProduct);
+                //}
                 await _productService.Create(createProduct);
                 return RedirectToAction(nameof(Index));
             }

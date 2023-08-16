@@ -14,7 +14,9 @@
             <th>Name</th>
             <th>Price</th>
             <th>Raiting</th>
+            <th>Categories</th>
             <th>ProductImage</th>
+
             <th colspan="2">Actions</th>
         </tr>
     </thead>
@@ -27,6 +29,12 @@
                 <td>@product.Name </td>
                 <td>@product.Price</td>
                 <td>@product.Raiting</td>
+                 <td>
+                    @foreach (var cat in product.ProductCategories)
+                    {
+                        @cat.Category?.Name <br />
+                    }
+                </td>
                 @if (product.ProductImage.StartsWith("http"))
                 {
                     <td><img src="@product.ProductImage" width="50" /></td>

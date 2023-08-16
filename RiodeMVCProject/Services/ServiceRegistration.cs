@@ -13,6 +13,7 @@ namespace RiodeMVCProject.Services
             services.AddScoped<IBannerService,BannerService> ();
             services.AddScoped<IProductService,ProductService> ();
             services.AddScoped<IFileService, FileService> ();
+            services.AddScoped<ICategoryService, CategoryService> ();
         }
     }
 }

@@ -14,7 +14,8 @@ public class CategoryService : ICategoryService
         _context = context;
     }
 
-    public IQueryable<Category> GetTable => throw new NotImplementedException();
+    public IQueryable<Category> GetTable => _context.Set<Category>();
+
 
     public async Task Create(string name)
     {
@@ -29,25 +30,26 @@ public class CategoryService : ICategoryService
         throw new NotImplementedException();
     }
 
-    public Task<ICollection<Category>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<ICollection<Category>> GetAll()
+     => await _context.Categories.ToListAsync();
 
     public Task<Category> GetById(int? id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> IsAllExist(List<int> ids)
+    public async Task<bool> IsAllExist(List<int> ids)
     {
-        throw new NotImplementedException();
+        foreach (var id in ids)
+        {
+            if (!await IsExist(id))
+                return false;
+        }
+        return true;
     }
 
-    public Task<bool> IsExist(int id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> IsExist(int id)
+       => await _context.Categories.AnyAsync(c => c.Id == id);
 
     public Task Update(int? id, string name)
     {
