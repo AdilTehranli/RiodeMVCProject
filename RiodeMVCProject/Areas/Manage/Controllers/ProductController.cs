@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.DataAccess;
 using RiodeMVCProject.Extensions;
 using RiodeMVCProject.Models;
@@ -79,29 +81,38 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Update(int? id)
         {
-            try
-            {
-                return View(await _productService.GetById(id));
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
+			if (id == null || id <= 0) return BadRequest();
+			var entity = await _productService.GetTable.Include(p => p.productImages).SingleOrDefaultAsync(p => p.Id == id);
+			if (entity == null) return BadRequest();
+			UpdateProductGETVM vm = new UpdateProductGETVM
+			{
+				Name = entity.Name,
+				Raiting = entity.Raiting,
+                Category=entity.Category,
+				Price = entity.Price,
+				ProductImage = entity.ProductImage,
+                ProductImages=entity.productImages
+			};
+			return View(vm);
+		}
         [HttpPost]
-        public async Task<IActionResult> Update(int? id,UpdateProductVM updateProduct)
+        public async Task<IActionResult> Update(int? id,UpdateProductGETVM productGETVM)
         {
-            try
-            {
-                await _productService.Update(updateProduct);
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception)
+            if (id == null || id <= 0) return BadRequest();
+            var entity = await _productService.GetById(id);
+            if (entity == null) return BadRequest();
+            UpdateProductVM updateVm = new UpdateProductVM
             {
 
-                throw;
-            }
+                Name = productGETVM.Name,
+                Raiting = productGETVM.Raiting,
+                Price = productGETVM.Price,
+                Category=productGETVM.Category,
+                ProductImage = productGETVM.ProductImageFile,
+                ProductImages = productGETVM.ProductImagesFiles
+            };
+            await _productService.Update(id, updateVm);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

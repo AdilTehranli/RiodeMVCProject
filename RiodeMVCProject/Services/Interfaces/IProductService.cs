@@ -7,7 +7,7 @@ namespace RiodeMVCProject.Services.Interfaces
     {
         IQueryable<Product> GetTable { get; }
         Task Create(CreateProductVM Productvm);
-        Task Update(UpdateProductVM Productvm);
+        Task Update(int? id,UpdateProductVM Productvm);
         Task Delete(int? id);
         Task SoftDelete(int? id);
         Task<ICollection<Product>> GetAll(bool takeAll);

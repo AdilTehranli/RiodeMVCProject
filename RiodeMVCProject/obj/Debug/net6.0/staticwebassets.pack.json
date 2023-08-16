@@ -7453,6 +7453,14 @@
       "PackagePath": "staticwebassets\\ajax\\quickview.html"
     },
     {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\assets\\imgs\\products\\21cae118-c658-4495-8557-b48d82bce151.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\products\\21cae118-c658-4495-8557-b48d82bce151.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\assets\\imgs\\products\\aef0b086-dfa0-48eb-8cc2-ff91be9a805c.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\products\\aef0b086-dfa0-48eb-8cc2-ff91be9a805c.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\css\\demo-beauty.min.css",
       "PackagePath": "staticwebassets\\css\\demo-beauty.min.css"
     },
@@ -18595,10 +18603,6 @@
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\039f6be1-9996-4c12-9de5-a1869b93197b.webp",
       "PackagePath": "staticwebassets\\images\\img\\039f6be1-9996-4c12-9de5-a1869b93197b.webp"
-    },
-    {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\04147992-df1b-480b-8c95-c3a42123fe56.webp",
-      "PackagePath": "staticwebassets\\images\\img\\04147992-df1b-480b-8c95-c3a42123fe56.webp"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\images\\img\\0ab86ad2-a0a7-4db2-aec3-0f874b545385.png",

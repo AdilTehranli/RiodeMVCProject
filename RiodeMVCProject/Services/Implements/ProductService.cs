@@ -91,20 +91,39 @@ namespace RiodeMVCProject.Services.Implements
 
         public async Task SoftDelete(int? id)
         {
-            var entity = await GetById(id);
+            var entity = await GetById(id,true);
             entity.IsDeleted = !entity.IsDeleted;
             await _context.SaveChangesAsync();
         }
 
-        public async Task Update(UpdateProductVM Productvm)
+        public async Task Update(int? id,UpdateProductVM Productvm)
         {
-            var entity = await GetById(Productvm.Id);
+            var entity = await GetById(id);
             entity.Category = Productvm.Category;
             entity.Price = Productvm.Price; 
             entity.Name = Productvm.Name;
             entity.Price=Productvm.Price;
             entity.Raiting = Productvm.Raiting;
-            await _context.SaveChangesAsync();   
+            if(entity.ProductImage != null)
+            {
+                _fileService.Delete(entity.ProductImage);
+                _fileService.UploadAsync(Productvm.ProductImage, Path.Combine("images", "img"));
+            }
+			if (Productvm.ProductImages != null)
+			{
+				if (entity.productImages == null) entity.productImages = new List<ProductImage>();
+				foreach (var img in Productvm.ProductImages)
+				{
+
+					ProductImage prodImg = new ProductImage
+					{
+						Name = await _fileService.UploadAsync(img, Path.Combine("assets", "imgs", "products"))
+					};
+					entity.productImages.Add(prodImg);
+
+				}
+			}
+			await _context.SaveChangesAsync();   
         }
     }
 }

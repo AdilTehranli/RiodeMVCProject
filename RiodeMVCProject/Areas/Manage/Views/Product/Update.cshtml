@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Update";
 }
-@model Product
+@model UpdateProductGETVM
 <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label>Name</label>
@@ -11,7 +11,7 @@
         <span class="text-danger" asp-validation-for="Name"></span>
     </div>
     <div class="mb-3">
-        <label>ProductImage</label>
+        <label><img src="~/@Model.ProductImage" width="100" /></label>
         <input class="form-control" asp-for="ProductImage">
         <span class="text-danger" asp-validation-for="ProductImage"></span>
     </div>
@@ -30,6 +30,18 @@
         <label>Price</label>
         <input class="form-control" asp-for="Price">
         <span class="text-danger" asp-validation-for="Price"></span>
+    </div>
+    <div class="mb-3">
+        <label>
+            @foreach (var item in Model.ProductImages)
+            {
+                
+
+            <img src="~/@item.Name" width="100" />
+            }
+            </label>
+        <input class="form-control" asp-for="ProductImagesFiles">
+        <span class="text-danger" asp-validation-for="ProductImagesFiles"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
