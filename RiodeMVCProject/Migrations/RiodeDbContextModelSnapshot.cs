@@ -46,7 +46,7 @@ namespace RiodeMVCProject.Migrations
                     b.ToTable("Banners");
                 });
 
-            modelBuilder.Entity("RiodeMVCProject.Models.Product", b =>
+            modelBuilder.Entity("RiodeMVCProject.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,9 +54,26 @@ namespace RiodeMVCProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Category")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("RiodeMVCProject.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -79,6 +96,29 @@ namespace RiodeMVCProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("RiodeMVCProject.Models.ProductCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("RiodeMVCProject.Models.ProductImage", b =>
@@ -157,6 +197,25 @@ namespace RiodeMVCProject.Migrations
                     b.ToTable("Sliders");
                 });
 
+            modelBuilder.Entity("RiodeMVCProject.Models.ProductCategory", b =>
+                {
+                    b.HasOne("RiodeMVCProject.Models.Category", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RiodeMVCProject.Models.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("RiodeMVCProject.Models.ProductImage", b =>
                 {
                     b.HasOne("RiodeMVCProject.Models.Product", "Product")
@@ -168,8 +227,15 @@ namespace RiodeMVCProject.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("RiodeMVCProject.Models.Category", b =>
+                {
+                    b.Navigation("ProductCategories");
+                });
+
             modelBuilder.Entity("RiodeMVCProject.Models.Product", b =>
                 {
+                    b.Navigation("ProductCategories");
+
                     b.Navigation("productImages");
                 });
 #pragma warning restore 612, 618

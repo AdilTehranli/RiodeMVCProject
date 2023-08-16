@@ -88,7 +88,6 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
 			{
 				Name = entity.Name,
 				Raiting = entity.Raiting,
-                Category=entity.Category,
 				Price = entity.Price,
 				ProductImage = entity.ProductImage,
                 ProductImages=entity.productImages
@@ -107,7 +106,6 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                 Name = productGETVM.Name,
                 Raiting = productGETVM.Raiting,
                 Price = productGETVM.Price,
-                Category=productGETVM.Category,
                 ProductImage = productGETVM.ProductImageFile,
                 ProductImages = productGETVM.ProductImagesFiles
             };

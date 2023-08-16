@@ -7,9 +7,6 @@ namespace RiodeMVCProject.Models
         [Required]
         public string Name { get; set; }
         [Required]
-       
-        public string Category { get; set; }
-        [Required]
         public string Price { get; set; }
         [Required]
         public byte Raiting { get; set; }
@@ -17,5 +14,7 @@ namespace RiodeMVCProject.Models
 
         public string ProductImage { get; set;}
         public ICollection<ProductImage>? productImages { get; set; }
+        public ICollection<ProductCategory>? ProductCategories { get; set; }
+
     }
 }

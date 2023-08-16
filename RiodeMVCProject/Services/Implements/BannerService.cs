@@ -57,6 +57,11 @@ namespace RiodeMVCProject.Services.Implements
             var entity = await GetById(bannerVM.Id);
             entity.Subtitle = bannerVM.Subtitle;    
             entity.Title = bannerVM.Title;
+            if (bannerVM.BannerImage != null)
+            {
+                _fileService.Delete(entity.BannerImage);
+                entity.BannerImage = await _fileService.UploadAsync(bannerVM.BannerImage, Path.Combine("images", "img"));
+            }
             await _context.SaveChangesAsync();
         }
     }

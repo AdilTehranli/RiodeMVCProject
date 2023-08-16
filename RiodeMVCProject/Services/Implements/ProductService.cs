@@ -25,7 +25,6 @@ namespace RiodeMVCProject.Services.Implements
             Product entity = new Product()
             {
                 Name = Productvm.Name,
-                Category = Productvm.Category,
                 Price = Productvm.Price,
                 Raiting= Productvm.Raiting,
                 ProductImage=await _fileService.UploadAsync(Productvm.ProductImage,Path.Combine("images","img"))
@@ -109,7 +108,6 @@ namespace RiodeMVCProject.Services.Implements
         public async Task Update(int? id,UpdateProductVM Productvm)
         {
             var entity = await GetById(id);
-            entity.Category = Productvm.Category;
             entity.Price = Productvm.Price; 
             entity.Name = Productvm.Name;
             entity.Price=Productvm.Price;

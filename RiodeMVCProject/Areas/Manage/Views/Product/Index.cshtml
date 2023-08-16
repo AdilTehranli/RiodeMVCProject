@@ -12,7 +12,6 @@
 
             <th>Id</th>
             <th>Name</th>
-            <th>Category</th>
             <th>Price</th>
             <th>Raiting</th>
             <th>ProductImage</th>
@@ -26,7 +25,6 @@
             <tr @(product.IsDeleted ? "class=bg-danger" :"")>
                 <td>@product.Id</td>
                 <td>@product.Name </td>
-                <td>@product.Category</td>
                 <td>@product.Price</td>
                 <td>@product.Raiting</td>
                 @if (product.ProductImage.StartsWith("http"))
