@@ -1,5 +1,7 @@
 ﻿       <!-- start main -->
-
+@section styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+}
        @model HomeVM
         <main class="main demo2-cls">
             <div class="page-content">
@@ -82,69 +84,11 @@
                         </div>
                     </section>
 
-                    <section class="mt-10 pt-3 mb-6">
+                    <section id="product-se" class=" mt-10 pt-3 mb-6">
                         <h2 class="title title-simple title-center ls-m">Best Selling</h2>
 
                         <div class="product-wrapper row">
-                            @foreach (var product in Model.Products)
-                    {
-                        
-                            <div class="col-lg-3 col-md-4 col-6 mb-4">
-                                <div class="product appear-animate" data-animation-options="{
-                                    'name': 'fadeInLeftShorter',
-                                    'delay': '.4s'
-                                }">
-                                    <figure class="product-media">
-                                        <a asp-controller="ProductDetail" asp-action="Detail" asp-route-id="@product.Id">
-                                            <img src="~/@product.ProductImage" alt="Blue Pinafore Denim Dress"
-                                                 width="280" height="315" style="background-color: #f2f3f5;" />
-                                        </a>
-                                        <div class="product-label-group">
-                                            <label class="product-label label-new">new</label>
-                                        </div>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
-                                               data-target="#addCartModal" title="Add to cart">
-                                                <i class="d-icon-bag"></i>
-                                            </a>
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
-                                                <i class="d-icon-heart"></i>
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-quickview" title="Quick View">
-                                                Quick
-                                                View
-                                            </a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="product-cat">
-                                        @foreach (var item in @product.ProductCategories)
-                                        {
-                                            <a href="demo2-shop.html">@item.Category.Name</a>
-                                        }
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="demo2-product.html">@product.Name</a>
-                                        </h3>
-                                        <div class="product-price">
-                                            <span class="price">$@product.Price</span>
-                                        </div>
-                                        <div class="ratings-container">
-                                           
-                                            
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        
-                                            <a href="demo2-product.html" class="rating-reviews">( 12 reviews )</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    }
+                    <partial name="_ProductPartial" model="Model.Products">
                         </div>
                     </section>
 
@@ -563,4 +507,52 @@
             </div>
         </main>
         <!-- End of Main -->
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        let prods = document.querySelectorAll(".product .d-icon-bag");
+        document.getElementById('product-se').addEventListener("click", e => {
+            e.preventDefault();
+            if (e.srcElement.classList.contains("d-icon-bag")) {
+                fetch(e.target.parentElement.href)
+                    .then(res => {
+                        if (res.ok) {
+                            let count = document.getElementById("basketcount").innerText;
+                            document.getElementById("basketcount").innerText = ++count;
+                            document.querySelector(".cartid").innerText = count;
+
+                            // Sadece bir kez toastr.options'ı ayarla
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": false,
+                                "positionClass": "toast-top-right",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+
+                            toastr["success"]("Səbətə əlavə olundu");
+                        } else {
+                            toastr["error"]("Bir xəta baş verdi -else");
+                        }
+                    })
+                    .catch(() => {
+                        toastr["error"]("Bir xəta baş verdi -catch");
+                    });
+            }
+            if (e.target.tagName.toLowerCase() === 'a') {
+                window.location.href = e.target.href;
+            }
+        });
+    </script>
+}
 

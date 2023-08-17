@@ -75,8 +75,13 @@
 
 						<h1 class="product-name">@Model.Name</h1>
 						<div class="product-meta">
-							SKU: <span class="product-sku">12345670</span>
-							BRAND: <span class="product-brand">The Northland</span>
+							
+							 CATEGORIES:
+							@foreach (var item in Model.ProductCategories)
+							{
+							 <span class="product-brand">@item.Category.Name</span>
+								
+							}
 						</div>
 						<div class="product-price mb-2">$@Model.Price</div>
 						<div class="ratings-container">

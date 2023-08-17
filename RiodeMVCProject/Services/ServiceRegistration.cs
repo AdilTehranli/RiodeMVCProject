@@ -14,6 +14,8 @@ namespace RiodeMVCProject.Services
             services.AddScoped<IProductService,ProductService> ();
             services.AddScoped<IFileService, FileService> ();
             services.AddScoped<ICategoryService, CategoryService> ();
+            services.AddScoped<LayoutService>();
+
         }
     }
 }

@@ -39,11 +39,13 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="~/css/demo2.min.css">
+    @await RenderSectionAsync("styles", false);
 </head>
 
 <body class="home">
 
-   @await Component.InvokeAsync("Header");
+    @await Component.InvokeAsync("Basket");
+    @await Component.InvokeAsync("Header");
         <!-- End Header -->
 
             @RenderBody()
@@ -61,6 +63,7 @@
     <script src="~/vendor/owl-carousel/owl.carousel.min.js"></script>
     <!-- Main JS File -->
     <script src="~/js/main.min.js"></script>
+    @await RenderSectionAsync("scripts", false);
 </body>
 
 </html>
