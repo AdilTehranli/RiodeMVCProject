@@ -21,14 +21,10 @@ namespace RiodeMVCProject.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<BasketItemVM> items;
+            List<BasketItemVM> items = new();
             if (_contextAccessor.HttpContext.Request.Cookies["basket"] != null)
             {
                 items = JsonConvert.DeserializeObject<List<BasketItemVM>>(_contextAccessor.HttpContext.Request.Cookies["basket"]);
-            }
-            else
-            {
-                return View();
             }
             List<BasketItemProductVm> products = new();
             float sum = 0;

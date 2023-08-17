@@ -17,6 +17,7 @@ builder.Services.AddDbContext<RiodeDbContext>(opt =>
 builder.Services.AddControllersWithViews();
 
 // Configure the HTTP request pipeline.
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
