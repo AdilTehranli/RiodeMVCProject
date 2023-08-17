@@ -21,8 +21,11 @@
                 <td>@cat.Name</td>
                 <td></td>
                 <td></td>
+    <td><a asp-area="Manage" asp-controller="Category" asp-action="Delete" asp-route-id="@cat.Id" class="btn btn-danger delete-btn">Delete</a></td>
             </tr>
+
         }
+
     </tbody>
 </table>
         }

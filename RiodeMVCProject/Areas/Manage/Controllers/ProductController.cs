@@ -58,11 +58,11 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
                         ModelState.AddModelError("ImageFile", "File max size is 2mb" + img.FileName);
                     }
                 }
-                //if (!ModelState.IsValid)
-                //{
-                ViewBag.Categories = new SelectList(_categoryService.GetTable, "Id", "Name");
-                //    return View(createProduct);
-                //}
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Categories = new SelectList(_categoryService.GetTable, "Id", "Name");
+                    return View(createProduct);
+                }
                 await _productService.Create(createProduct);
                 return RedirectToAction(nameof(Index));
             }

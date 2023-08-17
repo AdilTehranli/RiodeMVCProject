@@ -4,6 +4,7 @@ using RiodeMVCProject.ExtensionServices.Interfaces;
 using RiodeMVCProject.Models;
 using RiodeMVCProject.Services.Interfaces;
 using RiodeMVCProject.ViewModels.ProductVMs;
+using System.Collections.ObjectModel;
 
 namespace RiodeMVCProject.Services.Implements
 {
@@ -89,11 +90,13 @@ namespace RiodeMVCProject.Services.Implements
 
         public async Task<ICollection<Product>> GetAll(bool takeAll)
         {
+
             if (takeAll)
             {
                 return await _context.Products.ToListAsync();
             }
-            return await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
+            //return await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
+            return await _context.Products.Include(p => p.ProductCategories).ThenInclude(pc => pc.Category).Where(p => p.IsDeleted == false).ToListAsync();
         }
 
         public async Task<Product> GetById(int? id, bool takeAll = false)

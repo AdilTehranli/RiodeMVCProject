@@ -1,5 +1,6 @@
 ﻿using RiodeMVCProject.Models;
 using RiodeMVCProject.ViewModels.ProductVMs;
+using System.Collections.ObjectModel;
 
 namespace RiodeMVCProject.Services.Interfaces
 {

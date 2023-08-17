@@ -29,5 +29,18 @@ public class CategoryController : Controller
         await _categoryService.Create(name);
         return RedirectToAction(nameof(Index));
     }
+    public async Task<IActionResult> Delete(int? id)
+    {
+        try
+        {
+            await _categoryService.Delete(id);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 
 }
