@@ -41,15 +41,18 @@
                                     </div>
                                     <div class="form-footer">
                                         <div class="form-checkbox">
-                                            <input type="checkbox" class="custom-checkbox" id="signin-remember"
+                                            <input asp-for="RememberMe" type="checkbox" class="custom-checkbox" id="signin-remember"
                                                    name="signin-remember" />
-                                            <label class="form-control-label" for="signin-remember">
+                                            <label asp-for="RememberMe" class="form-control-label" for="signin-remember">
                                                 Remember
                                                 me
                                             </label>
+                                            <span class="text-danger" asp-validation-for="Password"></span>
+
                                         </div>
                                         <a href="#" class="lost-link">Lost your password?</a>
                                     </div>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger col-12"></div>
                                     <button class="btn btn-dark btn-block btn-rounded" type="submit">Login</button>
                                 </form>
                                 <div class="form-choice text-center">
@@ -98,4 +101,6 @@
     </div>
 </main>
 
-
+@section scripts{
+    <partial name="_ValidationPartial" />
+}

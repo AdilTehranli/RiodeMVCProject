@@ -8,10 +8,12 @@ namespace RiodeMVCProject.Controllers;
 public class AuthController : Controller
 {
     readonly UserManager<AppUser> _userManager;
+    readonly SignInManager<AppUser> _signInManager;
 
-    public AuthController(UserManager<AppUser> userManager)
+    public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
     {
         _userManager = userManager;
+        _signInManager = signInManager;
     }
 
     public IActionResult Register()
@@ -42,5 +44,40 @@ public class AuthController : Controller
     public IActionResult Login()
     {
         return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginVM loginVM)
+    {
+        if (!ModelState.IsValid) return View();
+
+        var user = await _userManager.FindByNameAsync(loginVM.UsernameOrEmail);
+        if (user == null)
+        {
+            user = await _userManager.FindByEmailAsync(loginVM.UsernameOrEmail);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Username, email or password is wrong");
+                return View();
+            }
+        }
+        var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.RememberMe, true);
+        if (result.IsLockedOut)
+        {
+            ModelState.AddModelError("", "Wait untill " + user.LockoutEnd.Value.AddHours(4).ToString("HH:mm:ss"));
+            return View();
+        }
+        if (!result.Succeeded)
+        {
+
+            ModelState.AddModelError("", "Username, email or password is wrong");
+
+            return View();
+        }
+        return RedirectToAction("Index", "Home");
+    }
+    public async Task<IActionResult> Signout()
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction(nameof(Login));
     }
 }
