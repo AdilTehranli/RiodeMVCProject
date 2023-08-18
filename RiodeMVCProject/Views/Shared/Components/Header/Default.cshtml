@@ -35,11 +35,11 @@
                     <span class="divider"></span>
                     <a href="contact-us.html" class="contact d-lg-show"><i class="d-icon-map"></i>Contact</a>
                     <a href="#" class="help d-lg-show"><i class="d-icon-info"></i> Need Help</a>
-                    <a class="login-link" href="ajax/login.html" data-toggle="login-modal">
-                        <i class="d-icon-user"></i>Sign in
+                    <a asp-action="Login" asp-controller="Auth"  >
+                        <i class="d-icon-user"></i>Login
                     </a>
                     <span class="delimiter">/</span>
-                    <a class="register-link ml-0" href="ajax/login.html" data-toggle="login-modal">Register</a>
+                    <a asp-action="Register" asp-controller="Auth" ml-0">Register</a>
                     <!-- End of Login -->
                 </div>
             </div>

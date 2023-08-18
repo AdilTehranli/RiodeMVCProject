@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using RiodeMVCProject.DataAccess;
+using RiodeMVCProject.Models;
 using RiodeMVCProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,15 @@ builder.Services.AddDbContext<RiodeDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration["ConnectionStrings:MSSQL"]);
 
-});
+}).AddIdentity<AppUser, IdentityRole>(opt =>
+{
+    opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequiredLength = 8;
+    opt.Lockout.AllowedForNewUsers = false;
+    opt.Lockout.MaxFailedAccessAttempts = 3;
+    opt.SignIn.RequireConfirmedEmail = false;
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<RiodeDbContext>();
 builder.Services.AddControllersWithViews();
 
 // Configure the HTTP request pipeline.

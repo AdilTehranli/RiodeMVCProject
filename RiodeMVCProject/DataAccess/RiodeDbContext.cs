@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.Models;
 
 namespace RiodeMVCProject.DataAccess
 {
-    public class RiodeDbContext : DbContext
+    public class RiodeDbContext : IdentityDbContext
     {
         public RiodeDbContext(DbContextOptions options) : base(options)
         {
@@ -16,6 +17,7 @@ namespace RiodeMVCProject.DataAccess
         public DbSet<ProductImage> productImages { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasIndex(p => p.Name).IsUnique();

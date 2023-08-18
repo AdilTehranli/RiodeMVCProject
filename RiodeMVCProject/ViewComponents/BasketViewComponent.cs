@@ -35,7 +35,7 @@ namespace RiodeMVCProject.ViewComponents
                     Product = await _context.Products.Include(p => p.productImages).SingleOrDefaultAsync(p => p.Id == item.Id),
                     Count = item.Count
                 };
-                //sum += (float)((prodItem.Product.Price * (100 - prodItem.Product.Discount) / 100) * item.Count);
+                //sum += (float)((prodItem.Product.Price * (100 - prodItem.Product) / 100) * item.Count);
                 products.Add(prodItem);
             }
             ViewBag.SubTotal = sum;
