@@ -17,7 +17,7 @@ builder.Services.AddDbContext<RiodeDbContext>(opt =>
 
 }).AddIdentity<AppUser, IdentityRole>(opt =>
 {
-    opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
+    opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._@";
     opt.Password.RequireNonAlphanumeric = false;
     opt.Password.RequiredLength = 8;
     opt.Lockout.AllowedForNewUsers = false;

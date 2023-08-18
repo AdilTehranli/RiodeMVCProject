@@ -7629,14 +7629,6 @@
       "PackagePath": "staticwebassets\\css\\demo9.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\css\\docs.css",
-      "PackagePath": "staticwebassets\\css\\docs.css"
-    },
-    {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\css\\docs.min.css",
-      "PackagePath": "staticwebassets\\css\\docs.min.css"
-    },
-    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\css\\market1.min.css",
       "PackagePath": "staticwebassets\\css\\market1.min.css"
     },
@@ -20237,16 +20229,8 @@
       "PackagePath": "staticwebassets\\js\\main\\easing.js"
     },
     {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\js\\main\\minipopup.js",
-      "PackagePath": "staticwebassets\\js\\main\\minipopup.js"
-    },
-    {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\js\\main\\plugins.js",
       "PackagePath": "staticwebassets\\js\\main\\plugins.js"
-    },
-    {
-      "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\js\\main\\popup.js",
-      "PackagePath": "staticwebassets\\js\\main\\popup.js"
     },
     {
       "Id": "C:\\Users\\User\\c#-ASP.NET\\RiodeMVCProject\\RiodeMVCProject\\wwwroot\\js\\main\\product-single-page.js",
