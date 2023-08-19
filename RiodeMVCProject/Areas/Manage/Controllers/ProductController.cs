@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RiodeMVCProject.DataAccess;
@@ -11,6 +12,8 @@ using RiodeMVCProject.ViewModels.ProductVMs;
 namespace RiodeMVCProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize]
+
     public class ProductController : Controller
     {
        readonly RiodeDbContext _context;

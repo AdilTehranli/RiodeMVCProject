@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RiodeMVCProject.Services.Interfaces;
 
 namespace RiodeMVCProject.Areas.Manage.Controllers;
 
 [Area("Manage")]
+[Authorize]
 
 public class CategoryController : Controller
 {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RiodeMVCProject.Extensions;
 using RiodeMVCProject.Models;
 using RiodeMVCProject.Services.Implements;
@@ -8,6 +9,7 @@ using RiodeMVCProject.ViewModels.BannerVMs;
 namespace RiodeMVCProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize]
     public class BannerController : Controller
     {
         readonly IBannerService _bannerservice;

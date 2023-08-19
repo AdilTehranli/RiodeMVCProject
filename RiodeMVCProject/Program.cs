@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddService();
 // Add services to the container.
 
-
 builder.Services.AddDbContext<RiodeDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration["ConnectionStrings:MSSQL"]);
@@ -28,6 +27,12 @@ builder.Services.AddControllersWithViews();
 
 // Configure the HTTP request pipeline.
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.LoginPath = "/Auth/Login";
+    opt.AccessDeniedPath = "/Auth/AccessDenied";
+});
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {

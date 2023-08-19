@@ -9,11 +9,13 @@ public class AuthController : Controller
 {
     readonly UserManager<AppUser> _userManager;
     readonly SignInManager<AppUser> _signInManager;
+    readonly RoleManager<IdentityRole> _roleManager;
 
-    public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+    public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _roleManager = roleManager;
     }
 
     public IActionResult Register()
@@ -80,4 +82,10 @@ public class AuthController : Controller
         await _signInManager.SignOutAsync();
         return RedirectToAction(nameof(Login));
     }
+    //public async Task CreateRole()
+    //{
+    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Admin"}) ;
+    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Member"}) ;
+    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Editor"});
+    //}
 }
