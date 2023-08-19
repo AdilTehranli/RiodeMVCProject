@@ -5,7 +5,7 @@ using RiodeMVCProject.Services.Interfaces;
 namespace RiodeMVCProject.Areas.Manage.Controllers;
 
 [Area("Manage")]
-[Authorize]
+[Authorize(Roles = "Admin")]
 
 public class CategoryController : Controller
 {

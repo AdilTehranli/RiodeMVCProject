@@ -12,7 +12,7 @@ using RiodeMVCProject.ViewModels.ProductVMs;
 namespace RiodeMVCProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
 
     public class ProductController : Controller
     {

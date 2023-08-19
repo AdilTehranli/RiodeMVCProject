@@ -7,7 +7,7 @@ using RiodeMVCProject.ViewModels.SliderVMs;
 namespace RiodeMVCProject.Areas.Manage.Controllers;
 
 [Area("Manage")]
-[Authorize]
+[Authorize(Roles = "Admin")]
 
 public class SliderController : Controller
 {

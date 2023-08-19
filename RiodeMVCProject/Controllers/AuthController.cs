@@ -41,6 +41,15 @@ public class AuthController : Controller
             }
                 return View();
         }
+        var res = await _userManager.AddToRoleAsync(appUser, "Member");
+        if (!res.Succeeded)
+        {
+            foreach (var item in res.Errors)
+            {
+                ModelState.AddModelError("", item.Description);
+            }
+            return View();
+        }
         return RedirectToAction(nameof(Login));
     }
     public IActionResult Login()
@@ -84,8 +93,10 @@ public class AuthController : Controller
     }
     //public async Task CreateRole()
     //{
-    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Admin"}) ;
-    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Member"}) ;
-    //    await _roleManager.CreateAsync(new IdentityRole{Name = "Editor"});
+    //    await _userManager.AddToRolesAsync( await _userManager.FindByNameAsync("FamilTehranli@gmail.com"),"Admin");
+   
+
+
+
     //}
 }

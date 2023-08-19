@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    int order = 0;
+}
+@model List<UserAndRolesVM>
+<a asp-action="Create" class="btn btn-success">Create</a>
+<table class="table table-dark mt-2">
+    <thead>
+        <tr>
+
+            <th>#</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+
+            <tr>
+                <td>@(++order)</td>
+                <td>@user.Name</td>
+                <td><select class="select-role" asp-for="@user.Role" user-name="@user.Name" asp-items="@ViewBag.Roles"></select></td>
+                <td><a  asp-action="Delete" asp-route-id="@user.Name" class="btn btn-danger delete-btn">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+        @section scripts{
+            <script>
+                $(".select-role").each(function () {
+                    if ($(this).val() == "Admin") {
+                        $(this).prop("disabled", "true")
+                    }
+                })
+                $(".select-role").change(function () {
+                    $.post('https://localhost:7190/Manage/User/ChangeRole'{
+                        username: $(this).attr("user-name"),
+                        role: $(this).val()
+                    })
+                })
+            </script>
+        }

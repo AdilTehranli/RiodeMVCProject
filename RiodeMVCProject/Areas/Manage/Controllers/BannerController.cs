@@ -9,7 +9,7 @@ using RiodeMVCProject.ViewModels.BannerVMs;
 namespace RiodeMVCProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class BannerController : Controller
     {
         readonly IBannerService _bannerservice;
