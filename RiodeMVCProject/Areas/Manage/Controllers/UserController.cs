@@ -47,7 +47,7 @@ namespace RiodeMVCProject.Areas.Manage.Controllers
             var user = await _userManager.FindByNameAsync(username);
             if (currentUser == null || user == null) return BadRequest();
             var userRoles = await _userManager.GetRolesAsync(user);
-            if (userRoles.FirstOrDefault() == "Member")
+            if (userRoles.FirstOrDefault() == "Admin")
             {
                 return BadRequest();
             }

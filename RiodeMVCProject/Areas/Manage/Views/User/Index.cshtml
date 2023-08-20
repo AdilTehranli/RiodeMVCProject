@@ -28,18 +28,31 @@
         }
     </tbody>
 </table>
-        @section scripts{
-            <script>
-                $(".select-role").each(function () {
-                    if ($(this).val() == "Admin") {
-                        $(this).prop("disabled", "true")
-                    }
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+@section scripts{
+    <script>
+
+        $(".select-role").each(function () {
+            if ($(this).val() === "Admin") {
+                $(this).prop("disabled", true);
+            }
+        });
+
+        $(".select-role").change(function () {
+            var username = $(this).attr("user-name");
+            var role = $(this).val();
+
+            $.post('/Manage/User/ChangeRole', {
+                username: username,
+                role: role
+            })
+                .done(function (data) { 
+                    console.log('Not Change');
                 })
-                $(".select-role").change(function () {
-                    $.post('https://localhost:7190/Manage/User/ChangeRole'{
-                        username: $(this).attr("user-name"),
-                        role: $(this).val()
-                    })
-                })
-            </script>
-        }
+                .fail(function (error) {
+                    console.error('Error:', error.responseText);
+                });
+        });
+    </script>
+}
+

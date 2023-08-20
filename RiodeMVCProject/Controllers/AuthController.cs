@@ -91,12 +91,5 @@ public class AuthController : Controller
         await _signInManager.SignOutAsync();
         return RedirectToAction(nameof(Login));
     }
-    //public async Task CreateRole()
-    //{
-    //    await _userManager.AddToRolesAsync( await _userManager.FindByNameAsync("FamilTehranli@gmail.com"),"Admin");
-   
 
-
-
-    //}
 }
