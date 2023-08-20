@@ -35,9 +35,8 @@ namespace RiodeMVCProject.Controllers
         public async Task<IActionResult> AddBasket(int? id)
         {
             if (id == null || id <= 0) return BadRequest();
-            //var model = await _productService.GetById(id);
             if (!await _productService.GetTable.AnyAsync(p => p.Id == id)) return NotFound();
-            var basket = HttpContext.Request.Cookies["basket"];
+            var basket = HttpContext.Request.Cookies["Basket"];
             List<BasketItemVM> items = basket == null ? new List<BasketItemVM>() : JsonConvert.DeserializeObject<List<BasketItemVM>>(basket);
             var item = items.SingleOrDefault(i => i.Id == id);
             if (item == null)
@@ -53,7 +52,7 @@ namespace RiodeMVCProject.Controllers
             {
                 item.Count++;
             }
-            HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(items));
+            HttpContext.Response.Cookies.Append("Basket", JsonConvert.SerializeObject(items));
             return Ok();
         }
         public async Task<IActionResult> GetBasket()
